@@ -1,0 +1,88 @@
+﻿<Window x:Class="FingerprintAttendence.Windows.AddEmployee"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:GlobalLib.Views.Controls;assembly=GlobalLib"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+         FontFamily="/Resources/#Bahnschrift"
+        Title="AddEmployee" Height="550" Width="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border BorderBrush="LightGray" BorderThickness="1 1 0 0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Margin="30 30 30 10">
+                        <TextBlock Grid.Row="0" Text="Employee Name:" Margin="0 0 0 5" FontSize="15" FontWeight="Light" FontFamily="/Resources/#Bahnschrift"/>
+                        <local:CustomComboBox x:Name="EmployeeNameCombo" Grid.Row="1" FontSize="25" FontFamily="/Resources/#Bahnschrift"/>
+                        <TextBlock Grid.Row="0" Text="Factory:" Margin="0 15 0 5" FontSize="15" FontWeight="Light"  FontFamily="/Resources/#Bahnschrift"/>
+                        <ComboBox x:Name="Factory_Combo" Grid.Row="1" FontSize="20" Padding="10 10 5 5" FontFamily="/Resources/#Bahnschrift"/>
+                        <TextBlock Grid.Row="0" Text="Type:" Margin="0 15 0 5" FontSize="15" FontWeight="Light"  FontFamily="/Resources/#Bahnschrift"/>
+                        <local:CustomComboBox x:Name="TypeCombo" Grid.Row="1" FontSize="25" FontFamily="/Resources/#Bahnschrift"/>
+                        <TextBlock Grid.Row="0" Text="Designation:" Margin="0 15 0 5" FontSize="15" FontWeight="Light"  FontFamily="/Resources/#Bahnschrift"/>
+                        <local:CustomComboBox x:Name="Designation_Combo" Grid.Row="1" FontSize="25" FontFamily="/Resources/#Bahnschrift"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Grid.Row="0" Text="On Job:" Margin="0 15 0 5" FontSize="15" FontWeight="Light"  FontFamily="/Resources/#Bahnschrift"/>
+                            <CheckBox Name="IsOnJob" Margin="10 15 0 5" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <Button Name="PictureBtn" Grid.Row="2" Padding="0 8 0 5" Margin="30 0 30 10"
+                        Content="PERSON PICTURE" FontSize="20" Background="WhiteSmoke"
+                        BorderBrush="LightGray" Foreground="DarkGray" FontWeight="ExtraBold"/>
+                </Grid>
+            </Border>
+
+            <Border Grid.Column="1" BorderBrush="LightGray" BorderThickness="1 1 1 0">
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Image Name="PersonImage" Grid.Column="0" Margin="5" Height="300" Width="300"/>
+                        <Rectangle Grid.Column="1" Fill="LightGray" Margin="0 10 0 10"/>
+                        <Border Grid.Column="2" Name="Border" ClipToBounds="False">
+                            <Viewbox>
+                                <Image Name="FingerImageBox" Margin="5" Height="300" Width="300"/>
+                            </Viewbox>
+                        </Border>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <Border Grid.Row="1" BorderBrush="LightGray" BorderThickness="1">
+            <Button Name="Submit_Btn" Content="SUBMIT" FontSize="20" FontWeight="ExtraBold"
+                    Foreground="DarkGray" Background="WhiteSmoke" BorderBrush="LightGray" Margin="10"
+                    Padding="12 9 12 5" HorizontalAlignment="Right"/>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="ProductionSystem.Controls.Other.UnitColor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProductionSystem.Controls.Other"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Name="QuantityBlk" Text="4 Repeat" Padding="10 5" FontFamily="Consolas" FontWeight="ExtraBold" Foreground="Red"/>
+        </Border>
+
+        <TextBlock Grid.Column="1" Name="ColorBlk" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10 5"/>
+    </Grid>
+</UserControl>

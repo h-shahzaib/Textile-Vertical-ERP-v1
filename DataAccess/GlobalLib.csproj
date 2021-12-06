@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4FCB5C01-A82C-42C8-BC13-30EC49D4B702}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GlobalLib</RootNamespace>
+    <AssemblyName>GlobalLib</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.78\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DPUruNet, Version=1.0.0.1, Culture=neutral, PublicKeyToken=7f32ef930fec5e5f, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\BothModels\Salary.cs" />
+    <Compile Include="Data\EmbModels\EMBBrand.cs" />
+    <Compile Include="Data\EmbModels\EMBBrandLedger.cs" />
+    <Compile Include="Data\EmbModels\EMBDemand.cs" />
+    <Compile Include="Data\EmbModels\EMBInvoice.cs" />
+    <Compile Include="Data\EmbModels\EMBLabourLedger.cs" />
+    <Compile Include="Data\EmbModels\EMBOrder.cs" />
+    <Compile Include="Data\EmbModels\EMBOtherAccount.cs" />
+    <Compile Include="Data\EmbModels\EMBOtherLedger.cs" />
+    <Compile Include="Data\EmbModels\EMBTask.cs" />
+    <Compile Include="Data\EmbModels\HourlyStitch.cs" />
+    <Compile Include="Data\EmbModels\Machine.cs" />
+    <Compile Include="Data\EmbModels\Production.cs" />
+    <Compile Include="Data\EmbModels\Shift.cs" />
+    <Compile Include="Data\EMBStoreModels\Fabric.cs" />
+    <Compile Include="Data\EMBStoreModels\FabricLedger.cs" />
+    <Compile Include="Data\IDataReceive.cs" />
+    <Compile Include="Data\IDataSend.cs" />
+    <Compile Include="Data\BothModels\Expense.cs" />
+    <Compile Include="Data\Interfaces\ILedgerEntry.cs" />
+    <Compile Include="Data\NazyModels\LedgerAccount.cs" />
+    <Compile Include="Data\NazyModels\NazyOtherAccount.cs" />
+    <Compile Include="Data\NazyModels\NazyOtherLedger.cs" />
+    <Compile Include="Helpers\ApiHelper.cs" />
+    <Compile Include="Helpers\BarcodeScanner.cs" />
+    <Compile Include="Helpers\FileCopier.cs" />
+    <Compile Include="Helpers\FingerprintScanner.cs" />
+    <Compile Include="Helpers\FTP_Helper.cs" />
+    <Compile Include="Others\ConnectionStrings.cs" />
+    <Compile Include="Others\ExtensionMethods\HelperMethods.cs" />
+    <Compile Include="Others\PCFingerPrint.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ShahzaibEMBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShahzaibEMBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Specials\SpecialMethods.cs" />
+    <Compile Include="Views\Controls\CustomComboBox.xaml.cs">
+      <DependentUpon>CustomComboBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\CustomGrid.xaml.cs">
+      <DependentUpon>CustomGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Others\ExtensionMethods\WinForm.cs" />
+    <Compile Include="Others\ExtensionMethods\WPF.cs" />
+    <Compile Include="Others\FolderPaths.cs" />
+    <Compile Include="Data\DatabaseAccess.cs" />
+    <Compile Include="Data\EmbModels\Design.cs" />
+    <Compile Include="Data\BothModels\Attendance.cs" />
+    <Compile Include="Data\BothModels\Worker.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Data\DataManager.cs" />
+    <Compile Include="Data\NazyModels\Invoice.cs" />
+    <Compile Include="Data\NazyModels\NazyOrder.cs" />
+    <Compile Include="Data\NazyModels\GatePass.cs" />
+    <Compile Include="Data\NazyModels\GatePassLedger.cs" />
+    <Compile Include="Data\NazyModels\MoneyLedger.cs" />
+    <Compile Include="Data\NazyModels\PiecesLedger.cs" />
+    <Compile Include="Data\NazyModels\TransactionRecord.cs" />
+    <Compile Include="Data\NazyModels\Unit.cs" />
+    <Compile Include="Others\Suggestions.cs" />
+    <Compile Include="Views\Controls\LedgerRelated\LedgerPage.xaml.cs">
+      <DependentUpon>LedgerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\LedgerRelated\LedgerDetailPage.xaml.cs">
+      <DependentUpon>LedgerDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\LedgerRelated\LedgerClientRow.xaml.cs">
+      <DependentUpon>LedgerClientRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\LedgerRelated\LedgerDetailRow.xaml.cs">
+      <DependentUpon>LedgerDetailRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SpecialOnes\ImagesViewer.xaml.cs">
+      <DependentUpon>ImagesViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\ManagePicture.xaml.cs">
+      <DependentUpon>ManagePicture.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ShahzaibEMBDataSet.xsc">
+      <DependentUpon>ShahzaibEMBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ShahzaibEMBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ShahzaibEMBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ShahzaibEMBDataSet.xss">
+      <DependentUpon>ShahzaibEMBDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\Controls\CustomComboBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\CustomGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\LedgerRelated\LedgerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\LedgerRelated\LedgerDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Controls\LedgerRelated\LedgerClientRow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Controls\LedgerRelated\LedgerDetailRow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SpecialOnes\ImagesViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\ManagePicture.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Others\CodeClips\FakeProcessing_WinFormStyle.txt" />
+    <Content Include="Others\CodeClips\Shadow For Bottom Border.txt" />
+    <Content Include="Others\CodeClips\Use SVG.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

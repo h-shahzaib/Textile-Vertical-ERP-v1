@@ -1,0 +1,52 @@
+﻿<Application x:Class="FingerprintAttendence.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:FingerprintAttendence"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <DrawingImage x:Key="TickIcon">
+            <DrawingImage.Drawing>
+                <DrawingGroup>
+                    <GeometryDrawing Brush="Green" Geometry="M433.139,67.108L201.294,298.953c-6.249,6.249-16.381,6.249-22.63,0L78.861,199.15L0,278.011
+	                                                           l150.547,150.549c10.458,10.458,24.642,16.333,39.431,16.333l0,0c14.788,0,28.973-5.876,39.43-16.333L512,145.968L433.139,67.108z">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="DarkGray" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Brush="DarkGreen" Geometry="M485.921,119.888L187.59,418.22c-8.254,8.253-18.633,13.882-29.847,16.391c9.363,6.635,20.608,10.28,32.235,10.28l0,0
+		                                                      c14.788,0,28.973-5.876,39.43-16.333L512,145.966L485.921,119.888z">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="DarkGray" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+        <DrawingImage x:Key="CrossIcon">
+            <DrawingImage.Drawing>
+                <DrawingGroup>
+                    <GeometryDrawing Brush="Red" Geometry="m20.132 17.304-13.436-13.436c-.585-.586-1.535-.586-2.121 0l-.707.707c-.586.586-.586 1.536 0 2.121l13.436 13.436c.585.586 1.535.586 2.121 0l.707-.707c.586-.586.586-1.536 0-2.121z">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="DarkGray" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Brush="Red" Geometry="m17.304 3.868-13.436 13.436c-.586.585-.586 1.535 0 2.121l.707.707c.586.586 1.536.586 2.121 0l13.436-13.436c.586-.585.586-1.535 0-2.121l-.707-.707c-.586-.586-1.536-.586-2.121 0z">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="DarkGray" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Brush="Red" Geometry="m5.636 3.429c-.384 0-.768.146-1.061.439l-.707.707c-.586.586-.586 1.536 0 2.121l5.304 5.304 2.828-2.828-5.304-5.304c-.292-.293-.676-.439-1.06-.439z">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="DarkGray" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Brush="Red" Geometry="m12 9.172-2.828 2.828-5.304 5.304c-.586.585-.586 1.535 0 2.121l.707.707c.293.293.677.44 1.061.44s.768-.147 1.06-.44l5.304-5.304z">
+                        <GeometryDrawing.Pen>
+                            <Pen LineJoin="Round" Brush="DarkGray" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+    </Application.Resources>
+</Application>

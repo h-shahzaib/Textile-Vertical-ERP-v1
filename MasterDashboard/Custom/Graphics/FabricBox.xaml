@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="MasterDashboard.Custom.Graphics.FabricBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MasterDashboard.Custom.Graphics"
+             mc:Ignorable="d" 
+             Height="200" 
+             BorderThickness="0"
+             Margin="2.5 2.5 2.5 2.5"
+             d:DesignWidth="230"
+             >
+
+    <Border x:Name="EntryBorder" BorderThickness="1" CornerRadius="2" BorderBrush="Black" Background="White">
+        <Grid Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Image x:Name="ImageBox" Grid.Row="0" />
+            <TextBlock x:Name="StatusBlock" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Text="No Picture..." FontSize="25"/>
+            <Rectangle Fill="Transparent"/>
+
+            <Border Grid.Row="1" x:Name="LowerBorder" BorderBrush="Black" BorderThickness="0 1 0 0" Background="WhiteSmoke">
+                <Viewbox Margin="5 0 5 0" MaxHeight="40" MaxWidth="180">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock x:Name="FabricType" 
+                                   Foreground="DarkRed" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center" 
+                                   Margin="1 5 1 5"
+                                   Text="PAPER COTTON"
+                                   Grid.Column="0"
+                                   FontWeight="Bold"/>
+
+                        <TextBlock x:Name="ColorCode" 
+                                   Foreground="Black" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center" 
+                                   Grid.Column="2"
+                                   Text="1278"
+                                   Margin="1 5 1 5"
+                                   FontWeight="Bold"/>
+
+                        <TextBlock x:Name="Gazana" 
+                                   Foreground="DarkRed" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center" 
+                                   Margin="1 5 1 5"
+                                   Text="4 GZ"
+                                   Grid.Column="4"
+                                   FontWeight="Bold"/>
+                    </Grid>
+                </Viewbox>
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>

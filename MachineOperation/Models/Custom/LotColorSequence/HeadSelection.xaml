@@ -1,0 +1,34 @@
+﻿<Window x:Class="MachineOperation.Models.Custom.LotColorSequence.HeadSelection"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MachineOperation.Models.Custom.LotColorSequence"
+        mc:Ignorable="d"
+        Title="HeadSelection" 
+        Height="400" 
+        Width="450"
+        MaxWidth="450"
+        ResizeMode="NoResize"
+        Topmost="True"
+        ShowInTaskbar="False"
+        >
+
+    <Border BorderThickness="1" BorderBrush="Black">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="8*"/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="CloseBtn" Grid.Row="0" Foreground="White" Background="Red" HorizontalContentAlignment="Center"
+                    Content="X" FontSize="20"/>
+
+            <Viewbox Grid.Row="1" Margin="10">
+                <UniformGrid VerticalAlignment="Top" x:Name="BtnsContainer">
+                    <!-- Buttons Container -->
+                </UniformGrid>
+            </Viewbox>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,158 @@
+﻿<Window x:Class="MasterDashboard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        FontFamily="Century Gothic"
+        Height="1024" Width="800" 
+        WindowState="Maximized">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled">
+            <StackPanel x:Name="FabricsContainer" Orientation="Vertical"/>
+        </ScrollViewer>
+
+        <Border Grid.Row="1" Background="Black" Padding="5">
+            <Border.Effect>
+                <DropShadowEffect Direction="90" BlurRadius="5" ShadowDepth="1"/>
+            </Border.Effect>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" x:Name="LogoColumn"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Viewbox Grid.Column="0">
+                    <TextBlock Text = "ShahzaibEMB" 
+                           Foreground="White" 
+                           VerticalAlignment="Center" 
+                           HorizontalAlignment="Center" FontFamily="Bauhaus 93"
+                           Margin="5 0 0 0"
+                           />
+                </Viewbox>
+
+                <Grid Grid.Column="1" HorizontalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Viewbox Grid.Column="0">
+                        <Button Foreground="Black" 
+                            BorderBrush="LightGray"
+                            Background="WhiteSmoke"
+                            VerticalAlignment="Center" 
+                            Padding="5 2 5 2"
+                            FontWeight="Bold"
+                            x:Name="AddFabricBtn"
+                            HorizontalAlignment="Center" Click="AddFabricBtn_Click"
+                           >
+
+                            <Grid>
+                                <Grid.ColumnDefinitions >
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Viewbox Margin="0 .5 0 0">
+                                    <Grid>
+                                        <Path Fill="DarkGreen">
+                                            <Path.Data>
+                                                <PathGeometry Figures="m298.995,197.304l-17.103-17.104 17.18-17.179c1.875-1.875 2.929-4.419 2.929-7.071 0-2.652-1.054-5.195-2.929-7.071l-17.18-17.18 16.211-16.211c3.905-3.905 3.905-10.237 0-14.143l-36.376-36.375c-3.906-3.904-10.236-3.904-14.143,0l-16.211,16.211-10.126-10.126 13.553-13.554c3.905-3.905 3.905-10.237 0-14.143l-36.376-36.375c-1.876-1.875-4.419-2.929-7.071-2.929-2.652,0-5.196,1.054-7.071,2.929l-16.21,16.211-17.18-17.179c-3.906-3.904-10.236-3.904-14.143,0l-17.179,17.179-17.591-17.592c-1.876-1.875-4.419-2.929-7.071-2.929-2.652,0-5.196,1.054-7.071,2.929l-17.179,17.18-15.799-15.799c-3.906-3.904-10.236-3.904-14.143-8.88178e-16l-36.106,36.106c-3.905,3.905-3.905,10.237 8.88178e-16,14.143l15.798,15.798-17.479,17.48c-3.905,3.905-3.905,10.237 1.33227e-15,14.143l17.591,17.591-17.149,17.148c-3.905,3.905-3.905,10.237 1.33227e-15,14.143l17.18,17.18-16.211,16.21c-3.905,3.905-3.905,10.237 0,14.143l36.376,36.376c3.906,3.904 10.236,3.904 14.143,0l16.211-16.211 10.127,10.126-13.553,13.553c-3.905,3.905-3.905,10.237 0,14.143l36.376,36.376c3.906,3.904 10.236,3.904 14.143,0l16.211-16.211 17.179,17.179c1.953,1.952 4.512,2.929 7.071,2.929 2.559,0 5.118-0.977 7.071-2.929l17.148-17.148 17.104,17.104c3.906,3.904 10.236,3.904 14.143,0l17.479-17.48 16.585,16.585c3.906,3.904 10.236,3.905 14.143,0l36.107-36.105c1.875-1.875 2.929-4.419 2.929-7.071 0-2.652-1.054-5.195-2.929-7.071l-16.586-16.585 17.18-17.18c3.903-3.907 3.903-10.239-0.003-14.144zm-44.339-111.12l22.233,22.233-13.076,13.076h-22.66v-21.806l13.503-13.503zm-152.723,132.311l-14.045-14.045 14.456-14.456h21.807v28.501h-22.218zm70.719-97.002h-28.501v-22.631l14.06-14.06 14.441,14.442v22.249zm0,20v28.501h-28.501v-28.501h28.501zm-48.501-20h-21.679l-13.346-13.346 21.964-21.964 13.061,13.061v22.249zm-22.63,20h22.63v28.501h-22.28l-14.427-14.426 14.077-14.075zm42.63,48.501h28.501v28.501h-28.501v-28.501zm48.501,0h28.501v28.501h-28.501v-28.501zm0-20v-28.501h28.501v28.501h-28.501zm0-48.501v-21.806l14.472-14.472 14.029,14.03v22.248h-28.501zm-144.865,94.737l-22.233-22.233 16.211-16.211c3.905-3.905 3.905-10.237 0-14.143l-17.18-17.18 17.148-17.148c3.905-3.905 3.905-10.237 0-14.143l-17.59-17.591 17.479-17.479c3.905-3.905 3.905-10.237 0-14.142l-15.799-15.8 21.964-21.964 15.799,15.799c1.876,1.875 4.419,2.929 7.071,2.929 2.652,0 5.196-1.054 7.071-2.929l17.179-17.18 17.592,17.592c3.906,3.904 10.236,3.904 14.143,0l17.179-17.18 17.179,17.18c1.876,1.875 4.419,2.929 7.071,2.929 2.652,0 5.196-1.054 7.071-2.929l16.21-16.211 22.233,22.233-30.714,30.751-17.591-17.592c-1.875-1.875-4.419-2.929-7.071-2.929-2.652,0-5.195,1.054-7.071,2.929l-17.18,17.18-15.797-15.798c-1.875-1.875-4.419-2.929-7.071-2.929-2.652,0-5.196,1.054-7.071,2.929l-36.106,36.106c-3.905,3.905-3.905,10.237 0,14.143l15.799,15.799-17.48,17.479c-1.875,1.875-2.929,4.419-2.929,7.071 0,2.652 1.054,5.196 2.929,7.071l17.592,17.591-36.037,36zm63.303,57.987l-22.233-22.233 13.488-13.488h21.806v22.661l-13.061,13.06zm47.532,.968l-14.472-14.472v-22.218h28.501v22.66l-14.029,14.03zm48.395-.045l-14.365-14.365v-22.279h28.501v22.509l-14.136,14.135zm48.207-.894l-14.071-14.072v-21.679h22.248l13.787,13.787-21.964,21.964zm8.438-55.751h-22.51v-28.501h22.248l14.382,14.381-14.12,14.12zm.151-48.501h-22.66v-28.501h22.248l14.457,14.457-14.045,14.044z" FillRule="nonzero"/>
+                                            </Path.Data>
+                                        </Path>
+                                    </Grid>
+                                </Viewbox>
+
+                                <TextBlock Grid.Column="2" Text="ADD FABRIC" Margin="0 0 0 .5"/>
+                            </Grid>
+                        </Button>
+                    </Viewbox>
+
+                    <Viewbox Grid.Column="2">
+                        <Button Foreground="Black" 
+                                BorderBrush="LightGray"
+                                Background="WhiteSmoke"
+                                VerticalAlignment="Center" 
+                                Padding="5 2 5 2"
+                                FontWeight="Bold"
+                                x:Name="AddPlanBtn"
+                                HorizontalAlignment="Center"
+                                Click="AddPlanBtn_Click"
+                           >
+
+                            <Grid>
+                                <Grid.ColumnDefinitions >
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Viewbox Margin="0 .5 0 0">
+                                    <Grid>
+                                        <Path Fill="DarkGreen">
+                                            <Path.Data>
+                                                <PathGeometry Figures="M30.835,0h59.198L59.548,28.713L30.835,0z M104.182,
+                                                              88.891L8.733,182.785h63.972l62.687-62.686L104.182,88.891z
+	                                                          M64.707,44.479c-0.149,0.149-0.307,0.286-0.465,
+                                                              0.42L27.694,79.323l32.146,32.146L173.155,
+                                                              0H111.91L64.815,44.359
+	                                                          C64.778,44.398,64.746,44.44,64.707,44.479z M147.601,
+                                                              182.785l-26.841-26.841l-26.841,26.841H147.601z M151.302,125.403
+	                                                          l-19.935,19.935l37.448,37.448h6.47c4.143,0,
+                                                              7.5-3.358,7.5-7.5V93.919L151.302,
+                                                              125.403z M11.258,74.198
+	                                                          c0.109-0.124,0.215-0.251,0.334-0.369c0.231-0.231,
+                                                              0.477-0.438,0.729-0.632l36.303-34.193L9.621,
+                                                              0H7.5C3.357,0,0,3.358,0,7.5v77.302
+	                                                          L11.258,74.198z M16.77,89.613L0,
+                                                              105.408v64.926l49.146-48.345L16.77,89.613z M182.785,
+                                                              72.705V11.568l-67.909,66.803l31.122,31.122
+	                                                          L182.785,72.705z" FillRule="nonzero"/>
+                                            </Path.Data>
+                                        </Path>
+                                    </Grid>
+                                </Viewbox>
+
+                                <TextBlock Grid.Column="2" Text="ADD PLAN" Margin="0 0 0 .5"/>
+                            </Grid>
+                        </Button>
+                    </Viewbox>
+                </Grid>
+
+                <Viewbox Grid.Column="2">
+                    <Grid>
+                        <Button x:Name="StatusBtn"
+                                Content="○" 
+                                Foreground="White" 
+                                VerticalAlignment="Center" 
+                                HorizontalAlignment="Right" FontFamily="Bauhaus 93"
+                                Margin="5 0 5 0"
+                                Padding="0 2 0 0"
+                                BorderThickness="0"
+                                Background="Transparent"
+                                />
+
+                        <TextBlock Text = "ShahzaibEMB" 
+                                   Foreground="White" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center" FontFamily="Bauhaus 93"
+                                   Margin="5 0 0 0"
+                                   Visibility="Hidden"
+                                   />
+                    </Grid>
+                </Viewbox>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

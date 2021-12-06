@@ -1,0 +1,53 @@
+﻿<Page x:Class="LedgerManager.Files.Pages.ViewInvoicesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GlobalLib.Views.Controls;assembly=GlobalLib"
+      mc:Ignorable="d" 
+      FontFamily="Century Gothic"
+      d:DesignHeight="450" d:DesignWidth="1200"
+      Title="ReceivePage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" x:Name="SearchGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Margin="5" Text="Brand:" FontFamily="Arial" VerticalAlignment="Center" FontSize="15"/>
+            <local:CustomComboBox x:Name="Brand_Blk" Grid.Column="1" Margin="5" MinWidth="100" FontSize="20"/>
+            <TextBlock Grid.Column="2" Margin="5" Text="InvoiceNo:" FontFamily="Arial" VerticalAlignment="Center" FontSize="15"/>
+            <local:CustomComboBox x:Name="InvNo_Blk" Grid.Column="3" Margin="5" MinWidth="100" FontSize="20"/>
+            <TextBlock Grid.Column="4" Margin="5" Text="OrderNum:" FontFamily="Arial" VerticalAlignment="Center" FontSize="15"/>
+            <local:CustomComboBox x:Name="OrderNum_Blk" Grid.Column="5" Margin="5" MinWidth="100" FontSize="20"/>
+            <TextBlock Grid.Column="6" Margin="5" Text="Color:" FontFamily="Arial" VerticalAlignment="Center" FontSize="15"/>
+            <local:CustomComboBox x:Name="Color_Blk" Grid.Column="7" Margin="5" MinWidth="100" FontSize="20"/>
+            <TextBlock Grid.Column="8" Margin="5" Text="Size:" FontFamily="Arial" VerticalAlignment="Center" FontSize="15"/>
+            <local:CustomComboBox x:Name="Size_Blk" Grid.Column="9" Margin="5" MinWidth="100" FontSize="20"/>
+            <TextBlock Grid.Column="10" Margin="5" Text="Article:" FontFamily="Arial" VerticalAlignment="Center" FontSize="15"/>
+            <local:CustomComboBox x:Name="Article_Blk" Grid.Column="11" Margin="5" MinWidth="100" FontSize="20"/>
+        </Grid>
+
+        <ScrollViewer x:Name="ScrollView" Grid.Row="1">
+            <StackPanel x:Name="RowGroups_Cont" Grid.Row="1" Margin="5"/>
+        </ScrollViewer>
+    </Grid>
+</Page>

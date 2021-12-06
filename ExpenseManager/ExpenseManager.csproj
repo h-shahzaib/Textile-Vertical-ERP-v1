@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D2182086-CE6D-4C9B-B1EC-3CBF606DCC04}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ExpenseManager</RootNamespace>
+    <AssemblyName>ExpenseManager</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Ledgers\EMBLabourGroup\Other\LabourLedgerQuickEntry.xaml.cs">
+      <DependentUpon>LabourLedgerQuickEntry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\EMBLabourGroup\Other\QuickEntryRow.xaml.cs">
+      <DependentUpon>QuickEntryRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\EMBOtherLedgerGroup\EMBOtherLedgerEntryPg.xaml.cs">
+      <DependentUpon>EMBOtherLedgerEntryPg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\EMBOtherLedgerGroup\EMBOtherLedgerEntryRow.xaml.cs">
+      <DependentUpon>EMBOtherLedgerEntryRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\EMBOtherLedgerGroup\EMBOtherLedgerPg.xaml.cs">
+      <DependentUpon>EMBOtherLedgerPg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\EMBOtherLedgerGroup\EMBOtherLedgerRow.xaml.cs">
+      <DependentUpon>EMBOtherLedgerRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\NazyLedgerGroup\NazyLedgerRow.xaml.cs">
+      <DependentUpon>NazyLedgerRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\NazyLedgerGroup\NazyLedgerEntryPage.xaml.cs">
+      <DependentUpon>NazyLedgerEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\NazyLedgerGroup\NazyLedgerEntryRow.xaml.cs">
+      <DependentUpon>NazyLedgerEntryRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\NazyLedgerGroup\NazyUnitLedgerPage.xaml.cs">
+      <DependentUpon>NazyUnitLedgerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\NazyOtherLedgerGroup\NazyOtherLedgerEntryPg.xaml.cs">
+      <DependentUpon>NazyOtherLedgerEntryPg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\NazyOtherLedgerGroup\NazyOtherLedgerEntryRow.xaml.cs">
+      <DependentUpon>NazyOtherLedgerEntryRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\NazyOtherLedgerGroup\NazyOtherLedgerPg.xaml.cs">
+      <DependentUpon>NazyOtherLedgerPg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\NazyOtherLedgerGroup\NazyOtherLedgerRow.xaml.cs">
+      <DependentUpon>NazyOtherLedgerRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\SupplierLedgersGroup\SupplierLedgerEntryPg.xaml.cs">
+      <DependentUpon>SupplierLedgerEntryPg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\SupplierLedgersGroup\SupplierLedgerEntryRow.xaml.cs">
+      <DependentUpon>SupplierLedgerEntryRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\SupplierLedgersGroup\SupplierLedgerPg.xaml.cs">
+      <DependentUpon>SupplierLedgerPg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\SupplierLedgersGroup\SupplierLedgerRow.xaml.cs">
+      <DependentUpon>SupplierLedgerRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OtherLedgerPg.xaml.cs">
+      <DependentUpon>OtherLedgerPg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BrandLedgerPg.xaml.cs">
+      <DependentUpon>BrandLedgerPg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SalaryPage.xaml.cs">
+      <DependentUpon>SalaryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SupplierLedgerPg.xaml.cs">
+      <DependentUpon>SupplierLedgerPg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddBrand.xaml.cs">
+      <DependentUpon>AddBrand.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Controls\UnitRow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ledgers\EMBBrandGroup\EMBBrandLedgerPg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ledgers\EMBBrandGroup\EMBBrandLedgerRow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ledgers\EMBBrandGroup\EMBBrandLedgerEntryRow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ledgers\EMBBrandGroup\EMBBrandLedgerEntryPg.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ledgers\EMBLabourGroup\Other\LabourLedgerQuickEntry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ledgers\EMBLabourGroup\Other\QuickEntryRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ledgers\EMBOtherLedgerGroup\EMBOtherLedgerEntryPg.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ledgers\EMBOtherLedgerGroup\EMBOtherLedgerEntryRow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ledgers\EMBOtherLedgerGroup\EMBOtherLedgerPg.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ledgers\EMBOtherLedgerGroup\EMBOtherLedgerRow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ledgers\NazyLedgerGroup\NazyLedgerRow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ledgers\NazyLedgerGroup\NazyLedgerEntryPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ledgers\NazyLedgerGroup\NazyLedgerEntryRow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ledgers\NazyLedgerGroup\NazyUnitLedgerPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ledgers\NazyOtherLedgerGroup\NazyOtherLedgerEntryPg.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ledgers\NazyOtherLedgerGroup\NazyOtherLedgerEntryRow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ledgers\NazyOtherLedgerGroup\NazyOtherLedgerPg.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ledgers\NazyOtherLedgerGroup\NazyOtherLedgerRow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ledgers\SupplierLedgersGroup\SupplierLedgerEntryPg.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ledgers\SupplierLedgersGroup\SupplierLedgerEntryRow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ledgers\SupplierLedgersGroup\SupplierLedgerPg.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ledgers\SupplierLedgersGroup\SupplierLedgerRow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\UnitRow.xaml.cs">
+      <DependentUpon>UnitRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\EMBBrandGroup\EMBBrandLedgerPg.xaml.cs">
+      <DependentUpon>EMBBrandLedgerPg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\EMBBrandGroup\EMBBrandLedgerRow.xaml.cs">
+      <DependentUpon>EMBBrandLedgerRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\EMBBrandGroup\EMBBrandLedgerEntryRow.xaml.cs">
+      <DependentUpon>EMBBrandLedgerEntryRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\EMBBrandGroup\EMBBrandLedgerEntryPg.xaml.cs">
+      <DependentUpon>EMBBrandLedgerEntryPg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Pages\AddExpensePg.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\OtherLedgerPg.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\LabourLedgerPg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ledgers\EMBLabourGroup\EMBLabourLedgerEntryPg.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ledgers\EMBLabourGroup\EMBLabourLedgerPg.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ledgers\EMBLabourGroup\EMBLabourLedgerRow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ledgers\EMBLabourGroup\EMBLabourLedgerEntryRow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\BrandLedgerPg.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SalaryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SupplierLedgerPg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ViewExpensePg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddBrand.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Pages\AddExpensePg.xaml.cs">
+      <DependentUpon>AddExpensePg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LabourLedgerPg.xaml.cs">
+      <DependentUpon>LabourLedgerPg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\EMBLabourGroup\EMBLabourLedgerEntryPg.xaml.cs">
+      <DependentUpon>EMBLabourLedgerEntryPg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\EMBLabourGroup\EMBLabourLedgerPg.xaml.cs">
+      <DependentUpon>EMBLabourLedgerPg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\EMBLabourGroup\EMBLabourLedgerRow.xaml.cs">
+      <DependentUpon>EMBLabourLedgerRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\EMBLabourGroup\EMBLabourLedgerEntryRow.xaml.cs">
+      <DependentUpon>EMBLabourLedgerEntryRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ViewExpensePg.xaml.cs">
+      <DependentUpon>ViewExpensePg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\GlobalLib.csproj">
+      <Project>{4FCB5C01-A82C-42C8-BC13-30EC49D4B702}</Project>
+      <Name>GlobalLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\Salary Page Controls\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

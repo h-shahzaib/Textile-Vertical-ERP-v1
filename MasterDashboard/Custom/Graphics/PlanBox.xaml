@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="MasterDashboard.Custom.Graphics.PlanBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             BorderThickness="1"
+             BorderBrush="Black"
+             >
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" BorderBrush="Black" BorderThickness="0 0 1 0">
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <DockPanel Grid.Row="0" x:Name="FabricContainer"/>
+
+                <Border Grid.Row="1" Background="Black" BorderThickness="0">
+                    <Viewbox Grid.Row="1">
+                        <TextBlock x:Name="GazanaLeft" 
+                                   Foreground="White" 
+                                   Text="63gz" 
+                                   FontSize="30"
+                                   Margin="5"/>
+                    </Viewbox>
+                </Border>
+            </Grid>
+        </Border>
+
+        <Viewbox Grid.Column="1">
+            <StackPanel x:Name="SectionContainer" Grid.Column="1" Orientation="Horizontal" Margin="5">
+                <Button Foreground="Black" 
+                        BorderBrush="LightGray"
+                        Background="WhiteSmoke"
+                        Padding="5 25 5 25"
+                        x:Name="SectionAddBtn"
+                        HorizontalAlignment="Center" Click="SectionAddBtn_Click"
+                        >
+
+                    <Viewbox Margin="0 .5 0 0" Width="10">
+                        <Grid>
+                            <Path Fill="DarkGreen">
+                                <Path.Data>
+                                    <PathGeometry Figures="m408 184h-136c-4.417969 0-8-3.582031-8-8v-136c0-22.089844-17.910156-40-40-40s-40 17.910156-40 40v136c0 4.417969-3.582031 8-8 8h-136c-22.089844 0-40 17.910156-40 40s17.910156 40 40 40h136c4.417969 0 8 3.582031 8 8v136c0 22.089844 17.910156 40 40 40s40-17.910156 40-40v-136c0-4.417969 3.582031-8 8-8h136c22.089844 0 40-17.910156 40-40s-17.910156-40-40-40zm0 0" FillRule="nonzero"/>
+                                </Path.Data>
+                            </Path>
+                        </Grid>
+                    </Viewbox>
+                </Button>
+            </StackPanel>
+        </Viewbox>
+    </Grid>
+</UserControl>

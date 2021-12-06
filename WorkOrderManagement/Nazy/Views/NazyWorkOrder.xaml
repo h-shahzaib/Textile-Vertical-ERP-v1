@@ -1,0 +1,142 @@
+﻿<UserControl x:Class="WorkOrderManagement.Nazy.Views.NazyWorkOrder"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Padding="0">
+
+    <Border BorderBrush="DarkGray" Background="White" BorderThickness="1" x:Name="MainBorder">
+        <Border.Effect>
+            <DropShadowEffect Direction="270" BlurRadius="3" ShadowDepth="1" />
+        </Border.Effect>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+            <Border Background="White" Margin="5" BorderBrush="LightGray" BorderThickness="1">
+                <Viewbox HorizontalAlignment="Left" Margin="2.5">
+                    <UniformGrid x:Name="ColorsCont" Columns="4"/>
+                </Viewbox>
+            </Border>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Row="1" Background="White" Padding="10 5 10 2" Margin="5 0 5 0" BorderBrush="LightGray" BorderThickness="1">
+                    <Viewbox MaxHeight="30">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="10"/>
+                                <ColumnDefinition Width="0" Name="SepratorCol"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="10"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="10"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="10"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="10"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="10"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0" x:Name="OrderNumBlk" Foreground="Gray" FontSize="15" VerticalAlignment="Center" FontFamily="Yu Gothic Medium"/>
+                            <TextBlock Grid.Column="3" x:Name="ArticleBlk" Foreground="Gray" FontSize="15" VerticalAlignment="Center" FontFamily="Yu Gothic Medium"/>
+                            <TextBlock Grid.Column="5" x:Name="ArticleTypeBlk" Foreground="Gray" FontSize="15" VerticalAlignment="Center" FontFamily="Yu Gothic Medium"/>
+                            <TextBlock Grid.Column="7" x:Name="MainFabricBlk" Foreground="Gray" FontSize="15" VerticalAlignment="Center" FontFamily="Yu Gothic Medium"/>
+                            <TextBlock Grid.Column="9" x:Name="TotalPcsBlk" Foreground="Gray" FontSize="15" VerticalAlignment="Center" FontFamily="Yu Gothic Medium"/>
+                            <TextBlock Grid.Column="11" x:Name="CostPerPieceBlk" Foreground="Gray" FontSize="15" VerticalAlignment="Center" FontFamily="Yu Gothic Medium"/>
+                            <TextBlock Grid.Column="13" x:Name="TotalCostBlk" Foreground="Gray" FontSize="15" VerticalAlignment="Center" FontFamily="Yu Gothic Medium"/>
+                        </Grid>
+                    </Viewbox>
+                </Border>
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="0" x:Name="ExpnsesBtn" Margin="0 0 2 0" Padding="10" Background="WhiteSmoke" 
+                            BorderBrush="LightGray" Width="30" Visibility="Collapsed"
+                            FontSize="10" Click="ExpnsesBtn_Click">
+                        <Image Source="{StaticResource DollarIcon}"/>
+                    </Button>
+
+                    <Button Grid.Column="1" x:Name="PrintBtn" Margin="0 0 2 0" Padding="7" Background="WhiteSmoke" 
+                        BorderBrush="LightGray" Width="30"
+                        FontSize="10" Click="PrintBtn_Click">
+                        <Image Source="{StaticResource PrintIcon}"/>
+                    </Button>
+
+                    <Button Grid.Column="2" x:Name="PartialPrintBtn" Margin="2 0 2 0" Padding="7" Background="WhiteSmoke" 
+                            BorderBrush="LightGray" Width="30"
+                            FontSize="10" Click="PartialPrintBtn_Click">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{StaticResource PrintIcon}" Grid.ColumnSpan="2"/>
+                            <Rectangle Fill="WhiteSmoke" Margin="-2 -2 0 -2"/>
+                        </Grid>
+                    </Button>
+
+                    <Button Grid.Column="3" x:Name="EditBtn" Margin="2 0 2 0" Padding="7" Background="WhiteSmoke" 
+                        BorderBrush="LightGray" Width="30"
+                        FontSize="10" Click="EditBtn_Click">
+                        <Image Source="{StaticResource TestImage}"/>
+                    </Button>
+
+                    <Button Grid.Column="4" x:Name="ReceiveBtn" Margin="2 0 2 0" Padding="7" Background="WhiteSmoke" 
+                        BorderBrush="LightGray" Width="30" Visibility="Collapsed"
+                        FontSize="10" Click="ReceiveBtn_Click">
+                        <Image Source="{StaticResource Receive_Btn}"/>
+                    </Button>
+
+                    <Button Grid.Column="5" x:Name="DuplicateBtn" Margin="2 0 2 0" Padding="7" Background="WhiteSmoke" 
+                        BorderBrush="LightGray" Width="30"
+                        FontSize="10" Click="DuplicateBtn_Click">
+                        <Image Source="{StaticResource Duplicate_Btn}"/>
+                    </Button>
+
+                    <Button Grid.Column="6" x:Name="DeleteBtn" Margin="2 0 5 0" Background="WhiteSmoke" 
+                        BorderBrush="LightGray" Content="X" Width="30"
+                        Foreground="Red" FontSize="15" Click="DeleteOrder_Click"/>
+                </Grid>
+            </Grid>
+
+            <Viewbox Name="Table_ViewBox" Grid.Row="2" Visibility="Collapsed">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <DockPanel x:Name="DetailTablePlaceHolder" Margin="7.5 0 2.5 0" VerticalAlignment="Top"/>
+                    <Rectangle Grid.Column="1" Fill="LightGray" Width="1" Visibility="Collapsed"/>
+                    <DockPanel Grid.Column="2" x:Name="TotalGzTablePlaceHolder" Margin="2.5 0 2.5 0"  
+                               VerticalAlignment="Top"/>
+                </Grid>
+            </Viewbox>
+
+            <Border Grid.Row="3" Background="White" Margin="5" BorderBrush="LightGray" BorderThickness="1">
+                <Image x:Name="MainImage" Grid.Row="3" Margin="20"/>
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>

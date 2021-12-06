@@ -1,0 +1,17 @@
+﻿<Window x:Class="EMBAdminDashboard.Windows.AddBrand"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EMBAdminDashboard.Windows"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="AddBrand" Height="100" Width="700">
+    <StackPanel Margin="10" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBlock Text="Name:" FontFamily="Bahnschrift" FontSize="20" VerticalAlignment="Center" Margin="0 0 10 0"/>
+        <TextBox Name="NameBox" Padding="3" FontSize="20" VerticalContentAlignment="Center" Width="170"/>
+        <TextBlock Text="Code:" FontFamily="Bahnschrift" FontSize="20" VerticalAlignment="Center" Margin="10 0 10 0"/>
+        <TextBox Name="CodeBox" Padding="3" FontSize="20" VerticalContentAlignment="Center" Width="100" CharacterCasing="Upper"/>
+        <TextBlock Text="HeadLength:" FontFamily="Bahnschrift" FontSize="20" VerticalAlignment="Center" Margin="10 0 10 0"/>
+        <TextBox Name="HeadLengthBox" Padding="3" FontSize="20" VerticalContentAlignment="Center" Width="100"/>
+    </StackPanel>
+</Window>

@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="StitchingTracker.Files.Views.Controls.UnitBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             BorderThickness="1"
+             BorderBrush="Black"
+             Background="White"
+             Margin="5">
+    <UserControl.Effect>
+        <DropShadowEffect Direction="310" ShadowDepth="0.5" Opacity="0.445"/>
+    </UserControl.Effect>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:Name="StatusBlock" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Center" 
+                       Grid.Column="0" Text="No Picture..." 
+                       FontSize="25"
+                       Margin="5 5 5 10"/>
+
+            <Image Grid.Column="0" x:Name="ImageBox"/>
+
+            <Border Grid.Column="1" BorderThickness="1 0 0 0" BorderBrush="Black">
+                <Viewbox Grid.Column="1" VerticalAlignment="Top">
+                    <StackPanel x:Name="AttrsContainer" Orientation="Vertical" Margin="3 3 3 0"/>
+                </Viewbox>
+            </Border>
+        </Grid>
+
+        <Border Grid.Row="2" BorderThickness="0 1 0 0" 
+                BorderBrush="Black" Background="WhiteSmoke"
+                x:Name="QuantityBorder">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="AvailableQuantityBx" Grid.Column="0" BorderThickness="0" Background="Transparent"
+                        VerticalAlignment="Center" FontSize="20" Foreground="DarkGreen"
+                        Margin="10 3 5 5" FontWeight="DemiBold"/>
+                <TextBox x:Name="SpecifyQuantityBx" Grid.Column="2" Margin="5" MinWidth="50" VerticalContentAlignment="Center"
+                         HorizontalContentAlignment="Center"/>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

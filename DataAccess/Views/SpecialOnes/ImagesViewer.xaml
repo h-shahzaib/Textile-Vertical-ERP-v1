@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="GlobalLib.Views.SpecialOnes.ImagesViewer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GlobalLib.Views.SpecialOnes"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="400">
+    <Border Name="MainBorder" BorderBrush="DarkGray" BorderThickness="1">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Image x:Name="ImageBox" Grid.Row="0" Margin="10"/>
+
+            <Border Grid.Row="1" Background="#E9E9E9" Padding="5" BorderBrush="DarkGray" BorderThickness="0 1 0 0" VerticalAlignment="Bottom">
+                <Viewbox MaxHeight="30">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock x:Name="CurrentImageText" Text="1" Margin="5 3 5 0" FontWeight="ExtraBold" Foreground="Gray" FontFamily="Bahnschrift"/>
+                        <TextBlock Text="|"  FontWeight="ExtraBold" Foreground="Gray"/>
+                        <TextBlock x:Name="TotalImageText" Text="2" Margin="5 3 5 0" FontWeight="ExtraBold" Foreground="Gray" FontFamily="Bahnschrift"/>
+                    </StackPanel>
+                </Viewbox>
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>

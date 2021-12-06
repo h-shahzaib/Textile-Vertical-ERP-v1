@@ -1,0 +1,209 @@
+﻿<Window x:Class="MachineOperation.Models.Custom.Windows.ShiftEndWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        FontFamily="Century Gothic"
+        FontWeight="Bold"
+        Background="Transparent"
+        Title="Shift End Window" Height="700" Width="800" ShowInTaskbar="False">
+
+    <Border Grid.Row="0" BorderBrush="Black" Background="White" BorderThickness="1">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="0"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0" x:Name="ProductionBlock">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Viewbox MaxHeight="25" HorizontalAlignment="Left">
+                            <TextBlock Grid.Row="0" Text="Production Stitch:"/>
+                        </Viewbox>
+                        <Border Grid.Row="1" Background="Black">
+                            <Viewbox MaxHeight="50" HorizontalAlignment="Left">
+                                <TextBlock Name="ProductionTotal" 
+                                                   Foreground="White"  
+                                                   Padding="5 0 5 0"
+                                                   Text="000,000"/>
+                            </Viewbox>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Viewbox Grid.Row="0" Grid.Column="0" MaxHeight="25" HorizontalAlignment="Left">
+                            <TextBlock Text="Hourly Stitch:"/>
+                        </Viewbox>
+                        <Border Grid.Row="1" Grid.Column="0" Background="Black">
+                            <Viewbox MaxHeight="50" HorizontalAlignment="Left">
+                                <TextBlock x:Name="HourlyTotal"
+                                                   TextAlignment="Center" 
+                                                   Foreground="White"
+                                                   Text="000,000"
+                                                   Padding="5 0 5 0"/>
+                            </Viewbox>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Row="4" Visibility="Collapsed">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Viewbox Grid.Row="0" Grid.Column="0" MaxHeight="25" HorizontalAlignment="Left">
+                            <TextBlock Text="Encoder Stitch:"/>
+                        </Viewbox>
+                        <Border Grid.Row="1" Grid.Column="0" Background="Black">
+                            <Viewbox MaxHeight="50" HorizontalAlignment="Left">
+                                <TextBlock x:Name="EncoderTotal"
+                                                   TextAlignment="Center" 
+                                                   Foreground="White"
+                                                   Text="000,000"
+                                                   Padding="5 0 5 0"/>
+                            </Viewbox>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Row="6">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Viewbox Grid.Row="0" Grid.Column="0" MaxHeight="25" HorizontalAlignment="Left">
+                            <TextBlock Text="Currently Running Design:"/>
+                        </Viewbox>
+                        <Border Grid.Row="1" Grid.Column="0" 
+                                BorderThickness="0"
+                                Background="Black"
+                                Margin="0 5 0 0"
+                                Padding="5 0 5 0">
+
+                            <Viewbox MaxHeight="50">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="5"/>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="5"/>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="5"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock x:Name="Design" Grid.Column="0" Foreground="White"
+                                               Margin="2 3 2 2"/>
+
+                                    <TextBlock x:Name="Color" Grid.Column="2" Foreground="White"
+                                               Margin="2 3 2 2"/>
+
+                                    <TextBlock x:Name="Stitch" Grid.Column="4" Foreground="White"
+                                               Margin="2 3 2 2"/>
+
+                                    <TextBlock x:Name="AddedStitchBlock" Grid.Column="6" Foreground="White"
+                                               Margin="2 3 2 2"/>
+                                </Grid>
+                            </Viewbox>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Row="8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Viewbox Grid.Row="0" Grid.Column="0" MaxHeight="25" HorizontalAlignment="Left">
+                            <TextBlock Text="Ending Current Stitch:"/>
+                        </Viewbox>
+                        <Border Grid.Row="1" Grid.Column="0" 
+                                Background="WhiteSmoke" 
+                                BorderBrush="DarkGray" 
+                                BorderThickness="1"
+                                x:Name="EndingCurrentBorder"
+                                Margin="0 5 0 0">
+
+                            <Viewbox MaxHeight="50" HorizontalAlignment="Center">
+                                <TextBox Grid.Row="2" x:Name="EndingCurrent" 
+                                         VerticalContentAlignment="Center" 
+                                         FontSize="25" CharacterCasing="Upper"
+                                         HorizontalContentAlignment="Center"
+                                         BorderThickness="0"
+                                         Background="WhiteSmoke"
+                                         CaretBrush="Transparent"
+                                         Foreground="Black"
+                                         TextChanged="EndingCurrent_TextChanged"
+                                         PreviewTextInput="EndingCurrent_PreviewTextInput"
+                                         DataObject.Pasting="EndingCurrent_Pasting"
+                                         FontWeight="SemiBold"
+                                         ContextMenu="{x:Null}"
+                                         />
+                            </Viewbox>
+                        </Border>
+                    </Grid>
+                </Grid>
+                
+                <Button Grid.Row="1" 
+                        Content="SUBMIT" 
+                        FontSize="30"
+                        Padding="0 11 0 10"
+                        VerticalAlignment="Bottom"
+                        Margin="10" Click="Button_Click"
+                        />
+            </Grid>
+
+            <Border BorderBrush="Black" BorderThickness="1 0 0 0" Grid.Row="0" Grid.Column="1">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel x:Name="HeaderPanel"/>
+                    <StackPanel x:Name="ProductionRecords" 
+                                        Orientation="Vertical" 
+                                        />
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Border>
+</Window>

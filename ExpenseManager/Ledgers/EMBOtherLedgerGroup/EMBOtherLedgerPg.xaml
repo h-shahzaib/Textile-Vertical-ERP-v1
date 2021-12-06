@@ -1,0 +1,44 @@
+﻿<Page x:Class="ExpenseManager.Ledgers.EMBOtherLedgerGroup.EMBOtherLedgerPg"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ExpenseManager.Ledgers.EMBBrandGroup"
+      mc:Ignorable="d" Background="White"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EMBBrandLedgerPg">
+
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <ScrollViewer Padding="4">
+                <StackPanel Name="Client_Rows_Cont" Orientation="Vertical"/>
+            </ScrollViewer>
+            <Border Grid.Row="1" BorderBrush="LightGray" BorderThickness="0 1 0 0">
+                <Grid Grid.Row="1" Background="White">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Left" Margin="5">
+                        <TextBlock Text="TOTALAMOUNT:" FontSize="12" Foreground="Black" FontFamily="Bahnschrift" Margin="8 2 0 0"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Name="PlusTotalBlk" Text="000" FontSize="20" Foreground="Red" FontFamily="Consolas" Margin="8 0 0 0" FontWeight="ExtraBold"/>
+                            <TextBlock Text="-" FontSize="20" Foreground="DarkGray" FontFamily="Consolas" Margin="8 0 0 0" FontWeight="ExtraBold"/>
+                            <TextBlock Name="MinusTotalBlk" Text="000" FontSize="20" Foreground="Green" FontFamily="Consolas" Margin="8 0 0 0" FontWeight="ExtraBold"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <Button Grid.Column="2" Content="+" Margin="5" 
+                                            Padding="10 2 10 6" FontSize="20" Background="#EEEEEE"
+                                            BorderBrush="DarkGray" FontWeight="ExtraBold"
+                                            Foreground="Gray" Name="AddBtn" Click="AddBtn_Click"/>
+                </Grid>
+            </Border>
+        </Grid>
+        <Frame Name="Frame_Ctrl" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Page>

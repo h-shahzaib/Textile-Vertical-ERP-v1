@@ -1,0 +1,24 @@
+﻿<Window x:Class="ToolboxAccessControl.Custom.Windows.WebcamWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToolboxAccessControl.Custom.Windows"
+        mc:Ignorable="d"
+        Title="WebcamWindow" Height="520" Width="700">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Image x:Name="ImageBox" Margin="0 0 0 10"/>
+        <Button x:Name="SubmitBtn" Grid.Row="1" Content="SUBMIT" Background="WhiteSmoke"
+                Foreground="DarkGray" BorderBrush="LightGray"
+                FontSize="20" Padding="0 5 0 5">
+            <Button.Effect>
+                <DropShadowEffect Direction="310" ShadowDepth="0.5" Opacity="0.445"/>
+            </Button.Effect>
+        </Button>
+    </Grid>
+</Window>

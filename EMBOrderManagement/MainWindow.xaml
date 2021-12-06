@@ -1,0 +1,80 @@
+﻿<Window x:Class="EMBOrderManagement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        mc:Ignorable="d" Background="White" WindowState="Maximized"
+        d:DesignHeight="450" d:DesignWidth="800"
+        Title="Shahzaib Embroidery Order:" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="WhiteSmoke" Padding="5" Name="UpperBorder">
+            <Border.Effect>
+                <DropShadowEffect Direction="-90" BlurRadius="10" ShadowDepth="1" Opacity=".3"/>
+            </Border.Effect>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="Brand:" Foreground="Black" VerticalAlignment="Center" Margin="5 0 5 0" FontFamily="Bahnschrift"/>
+                    <ComboBox Grid.Row="1" x:Name="BrandsCombo" Margin="5" IsEditable="True" Width="200" VerticalContentAlignment="Center" FontSize="18" Padding="2"/>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="Status:" Foreground="Black" VerticalAlignment="Center" Margin="5 0 5 0" FontFamily="Bahnschrift"/>
+                    <ComboBox Grid.Row="1" x:Name="StatusTypeCombo" Margin="5" IsEditable="True" Width="200" VerticalContentAlignment="Center" FontSize="18" Padding="2"/>
+                </Grid>
+                <Button Name="LotStatusBtn" Grid.Column="3" Margin="5" Padding="15 6 15 3">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Text="STATUS:" FontSize="10" Foreground="White" FontFamily="Bahnschrift"/>
+                        <TextBlock Grid.Row="1" Name="StatusBlk" Text="FINISHED" FontSize="15" Margin="0 2 0 0" FontWeight="Bold" FontFamily="Bahnschrift" Foreground="White"/>
+                    </Grid>
+                </Button>
+            </Grid>
+        </Border>
+
+        <ScrollViewer Grid.Row="1" Name="ScrollView" Padding="5">
+            <WrapPanel Name="OrdersCont"/>
+        </ScrollViewer>
+
+        <Grid Grid.Row="2" Background="Black">
+            <Grid.Effect>
+                <DropShadowEffect Direction="90" BlurRadius="5" ShadowDepth="1" Opacity=".5"/>
+            </Grid.Effect>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock FontFamily="Bauhaus 93" Foreground="White" Text="ShahzaibEMB" 
+                       Padding="15 5 5 5" VerticalAlignment="Center" FontSize="22"/>
+            <Button Name="NewOrderBtn" Grid.Column="2" Margin="5 8" Content="ADD NEW ORDER" FontWeight="ExtraBold" 
+                    Foreground="DarkGray" Background="Transparent" Padding="20 5" FontSize="18"/>
+            <Button Grid.Column="3" Content="○" Foreground="White" Background="Transparent"
+                    BorderThickness="0" Padding="8 0 8 0" Margin="5 10" Name="StatusBtn" FontSize="18"/>
+        </Grid>
+    </Grid>
+</Window>

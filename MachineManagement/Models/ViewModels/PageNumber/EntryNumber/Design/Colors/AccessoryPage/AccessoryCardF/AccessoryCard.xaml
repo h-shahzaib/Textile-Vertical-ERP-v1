@@ -1,0 +1,90 @@
+﻿<UserControl x:Class="MachineManagement.Models.ViewModels.PageNumber.EntryNumber.Design.Colors.AccessoryPage.AccessoryCardF.AccessoryCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MachineManagement.Models.ViewModels.PageNumber.EntryNumber.Design.Colors.AccessoryPage.AccessoryCardF"
+             xmlns:Custom="clr-namespace:MachineManagement.Models.ViewModels.PageNumber.EntryNumber.Design.Colors.AccessoryPage.AccessoryCardF.Controls"
+             mc:Ignorable="d" 
+             Margin="0 0 10 0"
+             d:DesignHeight="200" Width="450">
+
+    <Border x:Name="EntryBorder" BorderThickness="0" BorderBrush="Red">
+        <Border Padding="0 10 0 10" BorderThickness="1" BorderBrush="Black" Background="White" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Border x:Name="PosBlockBorder" Margin="3 -6 0 0" Panel.ZIndex="1" Grid.Row="0" BorderThickness="0" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <TextBlock x:Name="PositionBlock" 
+                       FontSize="20" 
+                       Text="1"
+                       FontWeight="Bold"
+                       Background="Transparent" 
+                       Padding="9 0 9 3" 
+                       Foreground="White"
+                       />
+                </Border>
+
+                <Viewbox>
+                    <Grid x:Name="ThreadGrid" Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- Thread Grid... -->
+                    </Grid>
+                </Viewbox>
+
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="1"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Rectangle Grid.RowSpan="2" Grid.Column="1" Fill="Black"/>
+                    <StackPanel x:Name="ExtraAccsCont" Grid.Column="3" Orientation="Vertical">
+                        <!-- Extra Accessories Container... -->
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Column="3" Grid.Row="1">
+                        <TextBlock x:Name="UsedRepsBlock" FontSize="30" Foreground="Black" Text="00" FontWeight="Bold"/>
+                        <Rectangle Margin="10 11 10 13" Fill="Black" Width="3" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="15"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <TextBlock x:Name="TotalRepsBlock" FontSize="30" Foreground="Red" Text="00" FontWeight="Bold"/>
+                        <Rectangle Margin="10" Fill="Black" Width="2"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox x:Name="UsingRepsText" Margin="5" Width="80" TextAlignment="Center" Text="0" FontSize="25"/>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+    </Border>
+</UserControl>

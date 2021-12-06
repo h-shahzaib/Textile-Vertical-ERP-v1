@@ -1,0 +1,167 @@
+﻿<Window x:Class="DesignerDashboard.Custom.Windows.ManualDesign"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesignerDashboard.Custom.Controls"
+        xmlns:GlobalLib="clr-namespace:GlobalLib.Views.Controls;assembly=GlobalLib"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        SizeToContent="Height"
+        Title="MainDetailEdit" d:DesignHeight="500" Width="650">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0" BorderBrush="DarkGray" BorderThickness="0 0 1 0">
+            <Grid x:Name="TextboxGrid" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" x:Name="GroupIDBlock">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Text="Group ID:" FontFamily="Bahnschrift" FontSize="15"/>
+                    <TextBox Name="GroupIDText" 
+                                     Foreground="Gray"
+                                     FontWeight="ExtraBold"
+                                     FontSize="22"
+                                     Grid.Row="2"
+                                     FontFamily="Century Gothic"
+                                     Padding="5"/>
+                </Grid>
+
+                <Grid Grid.Row="2" x:Name="DeignTypeBlock">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Design Type:" FontFamily="Bahnschrift" FontSize="15"/>
+                    <ComboBox Name="DesignTypeText" 
+                                      Foreground="Black"
+                                      Grid.Row="2"
+                                      IsEditable="True"
+                                      Padding="4"
+                                      FontFamily="Century Gothic"
+                                      VerticalContentAlignment="Center"
+                                      FontSize="22"
+                                      />
+                </Grid>
+
+                <Grid Grid.Row="4" x:Name="BrandBlock">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Brand:" FontFamily="Bahnschrift" FontSize="15"/>
+                    <GlobalLib:CustomComboBox Name="BrandText" 
+                                              Foreground="Black"
+                                              Grid.Row="2"
+                                              FontSize="25"
+                                              FontFamily="Century Gothic"/>
+                </Grid>
+
+                <Grid Grid.Row="6">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Stitch:" FontFamily="Bahnschrift" FontSize="15"/>
+                    <TextBox Name="StitchText" 
+                                     Foreground="Black"
+                                     Padding="4"
+                                     Grid.Row="1"
+                                     FontFamily="Consolas"
+                                     VerticalContentAlignment="Center"
+                                     FontSize="22" Grid.ColumnSpan="2"/>
+                    <Border Grid.Row="2" Margin="0 5 0 0" BorderBrush="DarkGray" BorderThickness="1">
+                        <WrapPanel Name="StitchesCont" Margin="2.5" MinHeight="30"/>
+                    </Border>
+                </Grid>
+
+                <Grid Grid.Row="8" x:Name="NoteBlock">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Note:"/>
+                    <TextBox Name="NoteText" 
+                                     Grid.Row="2"
+                                     Foreground="Black"
+                                     Padding="4 2 4 2"
+                                     TextWrapping="Wrap"
+                                     AcceptsReturn="True"
+                                     FontSize="20"/>
+                </Grid>
+
+                <Border Grid.Row="10" BorderBrush="DarkGray" BorderThickness="1">
+                    <ScrollViewer VerticalScrollBarVisibility="Hidden" 
+                                  CanContentScroll="True"
+                                  x:Name="Scroll">
+
+                        <StackPanel Margin="5" x:Name="CombinationStack"/>
+                    </ScrollViewer>
+                </Border>
+
+                <ProgressBar Name="ProgressBar" Grid.Row="12" IsIndeterminate="True" Width="150" Height="20" HorizontalAlignment="Center" Visibility="Collapsed"/>
+                <Button Name="DoneBtn" Grid.Row="12" Content="EDIT OLD" Padding="10 5 10 5" HorizontalAlignment="Right" Background="#E9E9E9" Foreground="Gray" FontWeight="ExtraBold" BorderBrush="DarkGray" FontSize="15" Click="Edit_With_Files"/>
+                <Button Name="AddBtn" Grid.Row="12" Content="ADD NEW" Padding="10 5 10 5" HorizontalAlignment="Left" Background="#E9E9E9" Foreground="Gray" FontWeight="ExtraBold" BorderBrush="DarkGray" FontSize="15" Click="Add_All_New"/>
+                <Button Name="EditBtn" Grid.Row="12" Margin="5 0 0 0" Padding="10 5 10 5" HorizontalAlignment="Center" Background="Green" Foreground="White" FontWeight="ExtraBold" BorderBrush="DarkGray" FontSize="15" >
+                    <StackPanel>
+                        <TextBlock Text="EDIT OLD" FontSize="12" HorizontalAlignment="Center"/>
+                        <TextBlock Text="WITHOUT FILES" FontSize="8" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </Grid>
+        </Border>
+
+        <StackPanel Margin="15" Grid.Column="1">
+            <TextBlock Text="EMB File:" FontSize="20" FontFamily="Bahnschrift"/>
+            <local:FilePathCtrl x:Name="EmbPathCtrl" FileFormat='EMB' Removeable="False"/>
+
+            <TextBlock Text="DST File:" FontSize="20" Margin="0 10 0 0" FontFamily="Bahnschrift"/>
+            <local:FilePathCtrl x:Name="DstPathCtrl" FileFormat='DST' Removeable="False"/>
+
+            <TextBlock Text="PNG File:" FontSize="20" FontFamily="Bahnschrift" Margin="0 10 0 0"/>
+            <local:FilePathCtrl x:Name="ImagePathCtrl" FileFormat='PNG' Removeable="False"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="PLOTTER Files:" FontSize="20" FontFamily="Bahnschrift" Margin="0 10 0 0"/>
+                <Button Name="AddPlotterRowBtn" Grid.Column="2" Margin="7 10 3 5" Content="+" Padding="5 -1 5 2" Foreground="Gray" BorderBrush="DarkGray" FontWeight="ExtraBold"/>
+            </Grid>
+
+            <Border BorderBrush="DarkGray" BorderThickness="1" Padding="5 0 5 5">
+                <StackPanel Name="PlottersCont">
+                    <local:FilePathCtrl FileFormat='JPEG' Removeable="True"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Window>

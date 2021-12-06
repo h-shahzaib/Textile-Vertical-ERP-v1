@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="LedgerManager.Files.Controls.UnitRow_NonEdit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Margin="2.5"
+             Height="50"
+             d:DesignWidth="1300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" BorderBrush="LightGray" Background="White" BorderThickness="1" Margin="5 2.5 0 2.5">
+            <Viewbox>
+                <TextBlock x:Name="SerialNumBx" Padding="5" FontFamily="Consolas" Foreground="DarkGray"/>
+            </Viewbox>
+        </Border>
+
+        <Border Grid.Column="1"  x:Name="OrderNum_Border" BorderBrush="LightGray" Background="White" BorderThickness="1" Margin="5 2.5 0 2.5">
+            <Viewbox>
+                <TextBlock x:Name="OrderNumBx" Padding="5"/>
+            </Viewbox>
+        </Border>
+
+        <Border Grid.Column="2" BorderBrush="LightGray" Background="White" BorderThickness="1" Margin="5 2.5 0 2.5">
+            <Viewbox>
+                <TextBlock x:Name="ColorCombo" Padding="5"/>
+            </Viewbox>
+        </Border>
+
+        <Border Grid.Column="3" BorderBrush="LightGray" Background="White" BorderThickness="1" Margin="5 2.5 0 2.5">
+            <Viewbox>
+                <TextBlock x:Name="SizeCombo" Padding="5"/>
+            </Viewbox>
+        </Border>
+
+        <Border Grid.Column="4" BorderBrush="LightGray" Background="White" BorderThickness="1" Margin="5 2.5 0 2.5">
+            <Viewbox>
+                <TextBlock x:Name="QuantityBx" Padding="5"/>
+            </Viewbox>
+        </Border>
+
+        <Border Grid.Column="5" BorderBrush="LightGray" Background="White" BorderThickness="1" Margin="5 2.5 0 2.5">
+            <Viewbox>
+                <TextBlock x:Name="RateBx" Padding="5"/>
+            </Viewbox>
+        </Border>
+
+        <Border Grid.Column="6" Grid.Row="0" BorderBrush="LightGray" Background="White" BorderThickness="1" Margin="5 2.5 0 2.5">
+            <Viewbox>
+                <TextBlock x:Name="TotalBlk" Padding="5" 
+                       FontWeight="Bold" Foreground="DarkGray" HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"/>
+            </Viewbox>
+        </Border>
+
+        <Border Grid.Column="7" BorderBrush="LightGray" Background="White" BorderThickness="1" Margin="5 2.5 0 2.5">
+            <Viewbox>
+                <TextBlock x:Name="DateBx" Padding="5"/>
+            </Viewbox>
+        </Border>
+
+        <Border Grid.Column="8" BorderBrush="LightGray" Background="White" BorderThickness="1" Margin="5 2.5 0 2.5">
+            <TextBlock x:Name="NoteBx" TextWrapping="Wrap" Width="150"/>
+        </Border>
+    </Grid>
+</UserControl>

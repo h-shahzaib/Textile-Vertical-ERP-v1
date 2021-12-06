@@ -1,0 +1,266 @@
+﻿using Main.Resources.Forms.ProgramEntry.OTHERS;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using ShahzaibEMB.Resources.Global;
+using static ShahzaibEMB.Resources.Forms.ProgramEntry.CustomControls;
+using ShahzaibEMB.Resources.Global;
+using Serilog;
+
+namespace ShahzaibEMB.Resources.Forms.ProgramEntry
+{
+    public partial class RepManagementForm : Form
+    {
+        bool DesignsAreMany = false;
+        string DesignPreset = null;
+        bool BaseAvaiable = false;
+        string BasePreset = null;
+        string RepType = null;
+        string RepsString = null;
+        string MchHDs = "24HD";
+        TextBox Storer = null;
+        Button SenderBtn = null;
+        public RepManagementForm(string Design, string Base, string RepsString, string RepType, TextBox Storer, Button Sender)
+        {
+            InitializeComponent();
+            new MakeMoveable(this, BorderPanel);
+
+            if (Design != null && Design != "")
+            { DesignPreset = Design; DesignsAreMany = true; }
+            else
+            { DesignPreset = null; DesignsAreMany = false; }
+
+            if (Base != null && Base != "")
+            { BasePreset = Base; BaseAvaiable = true; }
+            else
+            { BasePreset = null; BaseAvaiable = false; }
+
+            this.RepType = RepType;
+            if (!(RepsString.Split(',').ToList().TrueForAll(i => i.Contains('-'))))
+                this.RepsString = "";
+            else
+                this.RepsString = RepsString;
+
+            this.Storer = Storer;
+            this.SenderBtn = Sender;
+
+            Shown += delegate
+            {
+                ConfigureExtraControls();
+                ConfigureMainControls();
+            };
+            CloseBtn.Click += delegate { Close(); };
+            SizeChanged += delegate
+            {
+                Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - Width) / 2,
+                              (Screen.PrimaryScreen.WorkingArea.Height - Height) / 2);
+            };
+        }
+
+        private void ConfigureExtraControls()
+        {
+
+        }
+
+        private void ConfigureMainControls()
+        {
+            if (RepsString != "" || DesignsAreMany || BaseAvaiable)
+            {
+                List<FlowLayoutPanel> Panels = new List<FlowLayoutPanel>();
+
+                List<string[]> RowPresets = MakeRowPresets();
+                foreach (string[] RowPreset in RowPresets)
+                    Panels.Add(GenerateForMany(RowPreset));
+
+                FlowPanel.Controls.AddRange(Panels.ToArray());
+            }
+            else
+                GenerateSingle();
+        }
+
+        private List<string[]> MakeRowPresets()
+        {
+            string ModifiedRepString = "";
+            if (RepsString != "")
+            {
+                string[] RepsStringCommaSplits = RepsString.Split(',');
+                for (int v = 0; v < RepsStringCommaSplits.Count(); v++)
+                {
+                    List<int> MinusIndex = new List<int>();
+                    for (int j = 0; j < RepsStringCommaSplits[v].Count(); j++)
+                        if (RepsStringCommaSplits[v][j] == '-') MinusIndex.Add(j);
+
+                    if (BaseAvaiable)
+                        RepsStringCommaSplits[v] = RepsStringCommaSplits[v].Remove(0, MinusIndex[1] + 1);
+
+                    MinusIndex.Clear();
+                    for (int j = 0; j < RepsStringCommaSplits[v].Count(); j++)
+                        if (RepsStringCommaSplits[v][j] == '-') MinusIndex.Add(j);
+
+                    if (DesignsAreMany)
+                        RepsStringCommaSplits[v] = RepsStringCommaSplits[v].Remove(0, MinusIndex[0] + 1);
+                }
+                ModifiedRepString = string.Join(",", RepsStringCommaSplits);
+            }
+
+            List<int> TotalCounts = new List<int>();
+
+            if (BaseAvaiable)
+                TotalCounts.Add(BasePreset.Split(',').Count());
+            if (DesignsAreMany)
+                TotalCounts.Add(DesignPreset.Split(',').Count());
+            if (ModifiedRepString != "")
+                TotalCounts.Add(ModifiedRepString.Split(',').Count());
+
+            int MaxCount = TotalCounts.Max();
+
+            List<string[]> RowPresets = new List<string[]>();
+            for (int i = 0; i < MaxCount; i++)
+            {
+                List<string> RowPreset = new List<string>();
+
+                string Color = "";
+                if (BaseAvaiable)
+                {
+                    string Gazana = "";
+                    string[] CommaSplits = BasePreset.Split(',');
+                    if (i < CommaSplits.Count())
+                    {
+                        string[] MinusSplits = new string[2];
+                        MinusSplits = CommaSplits[i].Split('-');
+                        Color = MinusSplits[0];
+                        Gazana = MinusSplits[1];
+                    }
+                    RowPreset.Add(Color);
+                    RowPreset.Add(Gazana);
+                }
+
+                if (DesignsAreMany)
+                {
+                    string Design = "";
+
+                    string[] CommaSplits = DesignPreset.Split(',');
+                    if (i < CommaSplits.Count())
+                        Design = CommaSplits[i];
+
+                    RowPreset.Add(Design);
+                }
+
+                int NormalCount = 10;
+                if (RepsString != "")
+                {
+                    string[] MinusSplit = ModifiedRepString.Split(',')[i].Split('-');
+                    NormalCount = MinusSplit.Count();
+                    RowPreset.AddRange(MinusSplit);
+                }
+                else
+                    RowPreset.AddRange(new string[NormalCount]);
+
+                RowPresets.Add(RowPreset.ToArray());
+            }
+
+            return RowPresets;
+        }
+
+        int i = 0;
+        private void GenerateSingle()
+        {
+            FlowLayoutPanel Panel = new FlowLayoutPanel();
+            Panel.Name = "UnitPanel_" + i++;
+            Panel.WrapContents = false;
+            Panel.AutoSize = true;
+            Panel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            Control[] controlsList = Generator(new string[15]);
+            Panel.Controls.AddRange(controlsList);
+            FlowPanel.Controls.Add(Panel);
+            Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - Width) / 2,
+                          (Screen.PrimaryScreen.WorkingArea.Height - Height) / 2);
+            List<TextBox> GeneratedTextboxes = controlsList.Where(i => i.GetType() == typeof(TextBox)).Cast<TextBox>().ToList();
+            GeneratedTextboxes[0].Select();
+        }
+
+        private FlowLayoutPanel GenerateForMany(string[] oneRowPresetData)
+        {
+            FlowLayoutPanel Panel = new FlowLayoutPanel();
+            Panel.Name = "UnitPanel_" + i++;
+            Panel.WrapContents = false;
+            Panel.AutoSize = true;
+            Panel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            Panel.Controls.AddRange(Generator(oneRowPresetData));
+            return Panel;
+        }
+
+        private Control[] Generator(string[] oneRowPresetData)
+        {
+            List<Control> ControlsList = new List<Control>();
+            int index = 0;
+
+            ControlsList.Add(new CustomControls().CreateTextbox("BaseColor_", 200, oneRowPresetData[index++], TextType.Numeric));
+
+            if (BaseAvaiable)
+                ControlsList.Add(new CustomControls().CreateLabel("TotalBaseGazana_", oneRowPresetData[index++]));
+
+            if (DesignsAreMany)
+                ControlsList.Add(new CustomControls().CreateTextbox("Design_", 300, oneRowPresetData[index++], TextType.Alphanumeric));
+
+            if (RepType == Suggestions.HD_Dtl[0] /*FIXED-UNITs*/)
+            {
+                ControlsList.Add(new CustomControls().CreateTextbox("EMBRepeats_", 100, oneRowPresetData[index++], TextType.Numeric));
+                ControlsList.Add(new CustomControls().CreateTextbox("BASERepeats_", 100, oneRowPresetData[index++], TextType.Decimal));
+            }
+            else if (RepType == Suggestions.HD_Dtl[1] /*UnFIXED-UNITs*/)
+                ControlsList.Add(new CustomControls().CreateTextbox("BASERepeats_", 100, oneRowPresetData[index++], TextType.Decimal));
+            else if (RepType == Suggestions.HD_Dtl[2] /*REPS*/)
+            {
+                TextBox EMBRepeatsTextBox = new CustomControls().CreateTextbox("EMBRepeats_", 100, oneRowPresetData[index++], TextType.Numeric);
+                Label EMBGazanaLabel = new CustomControls().CreateLabel("EMBGazana_", oneRowPresetData[index++]);
+
+                EMBRepeatsTextBox.TextChanged += delegate
+                {
+                    int EMBRepeats;
+                    int.TryParse(EMBRepeatsTextBox.Text, out EMBRepeats);
+                    float OneRepGzEMB;
+                    float.TryParse(Suggestions.MchHDs[MchHDs].Split('|')[0], out OneRepGzEMB);
+
+                    EMBGazanaLabel.Text = (EMBRepeats * OneRepGzEMB).ToString();
+                };
+
+                ControlsList.Add(EMBRepeatsTextBox);
+                ControlsList.Add(EMBGazanaLabel);
+            }
+            else if (RepType == Suggestions.HD_Dtl[3] /*YARD*/)
+                ControlsList.Add(new CustomControls().CreateTextbox("EMBGazana_", 200, oneRowPresetData[index++], TextType.Numeric));
+
+            if (BaseAvaiable)
+                ControlsList.Add(new CustomControls().CreateLabel("RemainingBaseGazana_", oneRowPresetData[index++]));
+
+            return ControlsList.ToArray();
+        }
+
+        private void DoneBtn_Click(object sender, EventArgs e)
+        {
+            Storer.Text = ComposeRepString();
+            Close();
+        }
+
+        private string ComposeRepString()
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (FlowLayoutPanel Panel in FlowPanel.ControlGet(typeof(FlowLayoutPanel)))
+            {
+                foreach (Control Ctrl in Panel.Controls)
+                    sb.Append(Ctrl.Text + "-");
+                sb.Remove(sb.Length - 1, 1);
+                sb.Append(',');
+            }
+            sb.Remove(sb.Length - 1, 1);
+            return sb.ToString();
+        }
+    }
+}

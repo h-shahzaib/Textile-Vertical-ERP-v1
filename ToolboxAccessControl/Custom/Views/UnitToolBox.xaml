@@ -1,0 +1,40 @@
+﻿<Button x:Class="ToolboxAccessControl.Custom.Views.UnitToolBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        mc:Ignorable="d" 
+        BorderThickness="0"
+        Background="White"
+        Margin="5">
+    <Button.Effect>
+        <DropShadowEffect Direction="310" ShadowDepth="0.5" Opacity="0.445"/>
+    </Button.Effect>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Background="Black">
+            <TextBlock x:Name="ToolNameBlk" Foreground="White" 
+                       HorizontalAlignment="Center" FontSize="20" Margin="5"/>
+        </Border>
+
+        <TextBlock x:Name="StatusBlock" 
+                   Grid.Row="1"
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" 
+                   Text="No Picture..." 
+                   FontSize="25"
+                   Margin="5 5 5 10"/>
+
+        <Image x:Name="ImageBox" Grid.Row="1"/>
+
+        <Border Grid.Row="2" BorderThickness="0 1 0 0" Background="WhiteSmoke" BorderBrush="Black">
+            <TextBlock x:Name="CurrentPossessorNameBlk" Margin="0 5 0 5" FontSize="25"
+                       HorizontalAlignment="Center"/>
+        </Border>
+    </Grid>
+</Button>

@@ -1,0 +1,66 @@
+﻿<Window x:Class="FingerprintAttendence.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize" FontFamily="/Resources/#Bahnschrift"
+        Title="MainWindow" Height="650" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Grid Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Border BorderBrush="LightGray" BorderThickness="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="1"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Name="ImageBox" Height="300" Width="300" Stretch="Fill"/>
+                    <Rectangle Grid.Column="1" Fill="LightGray" Margin="0 10 0 10"/>
+                    <Image Name="PersonBox" Grid.Column="2" Height="300" Width="300" Stretch="Fill"/>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="1" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Image Name="IconBox" MaxHeight="25" MaxWidth="25"/>
+                <TextBlock Grid.Column="1" Name="MessageBlk" Margin="10 34 20 30" Text="Welcome!"
+                           FontFamily="Bahnschrift" FontSize="20"/>
+            </Grid>
+
+            <Button Name="AddEmployee_Btn" Grid.Row="2" HorizontalAlignment="Center" Content="Add Employee" FontSize="20" 
+                    Padding="30 8 30 5" Background="WhiteSmoke" BorderBrush="LightGray" FontWeight="ExtraBold"
+                    Foreground="DarkGray" FontFamily="/Resources/#Bahnschrift" Click="AddEmployee_Btn_Click"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Background="Black">
+            <Grid.Effect>
+                <DropShadowEffect Direction="90" BlurRadius="5" ShadowDepth="1"/>
+            </Grid.Effect>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="ShahzaibEMB" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Center"
+                       Padding="15 0 0 0" FontFamily="/Resources/#Bauhaus 93" FontSize="20"/>
+            <Button Name="StatusBtn" Grid.Column="2" Content="○" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Center"
+                    Padding="5 3 5 0" Margin="0 0 5 0" FontFamily="/Resources/#Bahnschrift" FontSize="15" BorderThickness="0" Background="Transparent"/>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,30 @@
+﻿<Window x:Class="MachineOperation.Models.ViewModels.LotColorOptions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="LotColorOptions" Height="200" Width="900">
+
+    <Border BorderBrush="Black" BorderThickness="1">
+        <Grid Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="Downward" Grid.Column="0" FontSize="30" Padding="10 -7 10 0" Background="White" BorderThickness="0">
+                <Viewbox>
+                    <TextBlock Text="↓"/>
+                </Viewbox>
+            </Button>
+
+            <Button x:Name="Upward" Grid.Column="2" FontSize="30" Padding="10 -7 10 0" Background="White" BorderThickness="0">
+                <Viewbox>
+                    <TextBlock Text="↑"/>
+                </Viewbox>
+            </Button>
+        </Grid>
+    </Border>
+</Window>

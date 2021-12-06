@@ -1,0 +1,46 @@
+﻿<Page x:Class="EMBAdminDashboard.Pages.ViewInvoicesPg"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GlobalLib.Views.Controls;assembly=GlobalLib"
+      mc:Ignorable="d" Margin="10"
+      d:DesignHeight="450" d:DesignWidth="1200"
+      Title="ReceivePage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" x:Name="SearchGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Margin="5" Text="Date:" FontFamily="Bahnschrift" VerticalAlignment="Center" FontSize="20"/>
+            <DatePicker x:Name="DateTimePick" Grid.Column="1" Margin="5" Padding="12 7 5 3" MinWidth="200" FontSize="20" Background="White" FontFamily="Yu Gothic Medium"/>
+            <TextBlock Grid.Column="3" Margin="5" Text="Brand:" FontFamily="Bahnschrift" VerticalAlignment="Center" FontSize="20"/>
+            <local:CustomComboBox x:Name="Brand_Blk" Grid.Column="4" Margin="5" MinWidth="100" FontSize="20"/>
+            <TextBlock Grid.Column="6" Margin="5" Text="InvoiceNo:" FontFamily="Bahnschrift" VerticalAlignment="Center" FontSize="20"/>
+            <local:CustomComboBox x:Name="InvNo_Blk" Grid.Column="7" Margin="5" MinWidth="100" FontSize="20"/>
+            <TextBlock Grid.Column="9" Margin="5" Text="DesignNum:" FontFamily="Bahnschrift" VerticalAlignment="Center" FontSize="20"/>
+            <local:CustomComboBox x:Name="DesignNum_Blk" Grid.Column="10" Margin="5" MinWidth="100" FontSize="20" IsUpperCase="True"/>
+        </Grid>
+
+        <ScrollViewer x:Name="ScrollView" Grid.Row="1" VerticalScrollBarVisibility="Visible">
+            <StackPanel x:Name="EntryRowGroups_Cont" Grid.Row="1" Margin="5"/>
+        </ScrollViewer>
+    </Grid>
+</Page>

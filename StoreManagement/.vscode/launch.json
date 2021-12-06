@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": ".NET Framework Launch",
+        "type": "clr",
+        "request": "launch",
+        "preLaunchTask": "build",
+        "program": "StoreManagement.StoreManagement.exe",
+        "args": [],
+        "cwd": "${workspaceFolder}\\StoreManagement.StoreManagement\\bin\\debug\\net461\\",
+        "stopAtEntry": false
+      },
+      {
+        "name": ".NET Framework",
+        "type": "clr",
+        "request": "attach",
+        "processId": "${command:pickProcess}"
+      }
+    ]
+  }

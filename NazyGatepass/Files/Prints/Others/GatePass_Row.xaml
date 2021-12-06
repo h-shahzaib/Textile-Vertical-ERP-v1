@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="NazyGatepass.Files.Prints.Others.GatePass_Row"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NazyGatepass.Files.Prints.Others"
+             mc:Ignorable="d" 
+             BorderBrush="Black"
+             BorderThickness="0 0 0 1"
+             d:DesignHeight="150" d:DesignWidth="800">
+    <Grid VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" FontWeight="Bold" Text="OrderNo:" Padding="5 8 5 1" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="1" x:Name="WorkOrder_Blk" Padding="5 1 5 1" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="2" FontWeight="Bold" Text="Color:" Padding="5 8 5 1" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="3" x:Name="Color_Blk" Padding="5 1 5 1" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="4" FontWeight="Bold" Text="Rate:" Padding="5 8 5 1" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="5" x:Name="Rate_Blk" Padding="5 1 5 8" VerticalAlignment="Center"/>
+
+        <TextBlock Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"
+                   x:Name="Note_Blk" Padding="5 3 5 3" VerticalAlignment="Center" TextWrapping="Wrap"/>
+
+        <Border Grid.Row="0" Grid.Column="2" Grid.RowSpan="6" Margin="0 5 0 5"
+                Padding="5" BorderBrush="Black" BorderThickness="0 0 0 0">
+            <Grid Grid.Row="4" HorizontalAlignment="Right">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" FontWeight="Bold" Text="Qty:" Padding="5 3 5 3" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" x:Name="TotalQuantity" Padding="5 3 5 3" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" FontWeight="Bold" x:Name="Received_Heading" Text="Rcv:" Padding="5 3 5 3" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" x:Name="Received_Blk" Padding="5 3 5 3" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" FontWeight="Bold" x:Name="Balance_Heading" Text="Bal:" Padding="5 3 5 3" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" x:Name="Balance_Blk" Padding="5 3 5 3" VerticalAlignment="Center" TextWrapping="Wrap"/>
+
+                <TextBlock Grid.Row="4" Grid.Column="0" FontWeight="Bold" Text="Ttl:" Padding="5 3 5 3" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="4" Grid.Column="1" x:Name="Total_Blk" Padding="5 3 5 3" VerticalAlignment="Center"/>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,0 +1,3 @@
+﻿var sw = Stopwatch.StartNew();
+while (sw.ElapsedMilliseconds < 2000)
+    Thread.SpinWait(1000);

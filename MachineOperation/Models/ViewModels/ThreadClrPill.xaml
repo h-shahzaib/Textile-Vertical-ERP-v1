@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="MachineOperation.Models.ViewModels.ThreadClrPill"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="75" d:DesignWidth="200">
+
+    <Border x:Name="OuterBorder" BorderBrush="Red" Margin="0 0 5 5" CornerRadius="2">
+        <Border Background="Black" CornerRadius="2">
+            <Viewbox>
+                <TextBlock Margin="10 5 10 5" x:Name="ShadeNumberBlock" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="50" Text="1278" FontWeight="Bold" FontFamily="/MachineOperation;component/Resources/Graphics/Fonts/#Consolas"/>
+            </Viewbox>
+        </Border>
+    </Border>
+</UserControl>
