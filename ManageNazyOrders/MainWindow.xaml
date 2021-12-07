@@ -15,7 +15,7 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
-        <Border Grid.Row="0" Background="WhiteSmoke" Padding="5" Name="UpperBorder">
+        <Border Grid.Row="0" Background="WhiteSmoke" Padding="5" Name="UpperBorder" Visibility="Collapsed">
             <Border.Effect>
                 <DropShadowEffect Direction="-90" BlurRadius="10" ShadowDepth="1" Opacity=".3"/>
             </Border.Effect>
@@ -34,7 +34,7 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Text="OrderNum:" Foreground="Black" VerticalAlignment="Center" Margin="5 0 5 0" FontFamily="Bahnschrift"/>
-                    <local:CustomComboBox Grid.Row="1" x:Name="OrderNumCombo" Margin="5" Width="200" FontSize="18"/>
+                    <ComboBox Grid.Row="1" x:Name="OrderNumCombo" Margin="5" Width="200" FontSize="18"/>
                 </Grid>
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
@@ -42,7 +42,7 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Text="Status:" Foreground="Black" VerticalAlignment="Center" Margin="5 0 5 0" FontFamily="Bahnschrift"/>
-                    <local:CustomComboBox Grid.Row="1" x:Name="OrderStatusCombo" Margin="5" Width="200" FontSize="18"/>
+                    <ComboBox Grid.Row="1" x:Name="OrderStatusCombo" Margin="5" Width="200" FontSize="18"/>
                 </Grid>
                 <Grid Grid.Column="2">
                     <Grid.RowDefinitions>
@@ -50,7 +50,7 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Text="Article Number:" Foreground="Black" VerticalAlignment="Center" Margin="5 0 5 0" FontFamily="Bahnschrift"/>
-                    <local:CustomComboBox Grid.Row="1" x:Name="ArticleNoCombo" Margin="5" Width="200" FontSize="18" IsUpperCase="True"/>
+                    <ComboBox Grid.Row="1" x:Name="ArticleNoCombo" Margin="5" Width="200" FontSize="18"/>
                 </Grid>
                 <Border Grid.Column="5" BorderBrush="LightGray" BorderThickness="1" Margin="12">
                     <TextBlock Name="CountBx" Grid.Column="3" Text="4" Foreground="Black" VerticalAlignment="Center" FontSize="20" Padding="10 0 10 0" FontFamily="Consolas"/>
@@ -60,7 +60,7 @@
 
         <Border Grid.Row="1" x:Name="OrderBorder">
             <ScrollViewer x:Name="ScrollView" Padding="5">
-                <WrapPanel x:Name="NazyOrderCont"/>
+                <UniformGrid x:Name="NazyOrderCont" VerticalAlignment="Top" Columns="3"/>
             </ScrollViewer>
         </Border>
 

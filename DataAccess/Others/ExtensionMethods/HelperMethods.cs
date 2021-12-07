@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Timers;
@@ -7,7 +10,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using Brushes = System.Windows.Media.Brushes;
-using Image = System.Windows.Controls.Image;
+using Image = System.Drawing.Image;
+using Size = System.Drawing.Size;
 
 namespace GlobalLib.Others.ExtensionMethods
 {
@@ -59,13 +63,96 @@ namespace GlobalLib.Others.ExtensionMethods
             }
         }
 
+        public static bool CropImageToTargetSize(Image image, int targetWidth, int targetHeight, string filePath)
+        {
+            ImageCodecInfo jpgInfo = ImageCodecInfo.GetImageEncoders().Where(codecInfo => codecInfo.MimeType == "image/jpeg").First();
+            Image finalImage = image;
+            System.Drawing.Bitmap bitmap = null;
+
+            try
+            {
+                int left = 0;
+                int top = 0;
+                int srcWidth = targetWidth;
+                int srcHeight = targetHeight;
+                bitmap = new System.Drawing.Bitmap(targetWidth, targetHeight);
+                double croppedHeightToWidth = (double)targetHeight / targetWidth;
+                double croppedWidthToHeight = (double)targetWidth / targetHeight;
+
+                if (image.Width > image.Height)
+                {
+                    srcWidth = (int)(Math.Round(image.Height * croppedWidthToHeight));
+                    if (srcWidth < image.Width)
+                    {
+                        srcHeight = image.Height;
+                        left = (image.Width - srcWidth) / 2;
+                    }
+                    else
+                    {
+                        srcHeight = (int)Math.Round(image.Height * ((double)image.Width / srcWidth));
+                        srcWidth = image.Width;
+                        top = (image.Height - srcHeight) / 2;
+                    }
+                }
+                else
+                {
+                    srcHeight = (int)(Math.Round(image.Width * croppedHeightToWidth));
+                    if (srcHeight < image.Height)
+                    {
+                        srcWidth = image.Width;
+                        top = (image.Height - srcHeight) / 2;
+                    }
+                    else
+                    {
+                        srcWidth = (int)Math.Round(image.Width * ((double)image.Height / srcHeight));
+                        srcHeight = image.Height;
+                        left = (image.Width - srcWidth) / 2;
+                    }
+                }
+
+                using (Graphics g = Graphics.FromImage(bitmap))
+                {
+                    g.SmoothingMode = SmoothingMode.HighQuality;
+                    g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                    g.CompositingQuality = CompositingQuality.HighQuality;
+                    g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    g.DrawImage(image, new System.Drawing.Rectangle(0, 0, bitmap.Width, bitmap.Height), new System.Drawing.Rectangle(left, top, srcWidth, srcHeight), GraphicsUnit.Pixel);
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString().ShowError();
+                return false;
+            }
+
+            finalImage = bitmap;
+            if (image != null)
+                image.Dispose();
+
+            try
+            {
+                using (EncoderParameters encParams = new EncoderParameters(1))
+                {
+                    encParams.Param[0] = new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, (long)100);
+                    //quality should be in the range [0..100] .. 100 for max, 0 for min (0 best compression)
+                    finalImage.Save(filePath, jpgInfo, encParams);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString().ShowError();
+                return false;
+            }
+        }
+
         public static void ViewImage(string path)
         {
             if (!File.Exists(path))
                 return;
 
             Window window = new Window();
-            Image image = new Image();
+            System.Windows.Controls.Image image = new System.Windows.Controls.Image();
             image.Source = new BitmapImage(new Uri(path));
             window.Content = image;
             window.SizeToContent = SizeToContent.WidthAndHeight;

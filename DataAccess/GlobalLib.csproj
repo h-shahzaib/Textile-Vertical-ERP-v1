@@ -23,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <UseVSHostingProcess>true</UseVSHostingProcess>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -72,7 +73,6 @@
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.2.0.78\lib\net461\Dapper.dll</HintPath>
     </Reference>
-    <Reference Include="DPUruNet, Version=1.0.0.1, Culture=neutral, PublicKeyToken=7f32ef930fec5e5f, processorArchitecture=MSIL" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -114,6 +114,7 @@
     <Compile Include="Data\NazyModels\LedgerAccount.cs" />
     <Compile Include="Data\NazyModels\NazyOtherAccount.cs" />
     <Compile Include="Data\NazyModels\NazyOtherLedger.cs" />
+    <Compile Include="Data\NazyModels\NazyWorkOrder.cs" />
     <Compile Include="Helpers\ApiHelper.cs" />
     <Compile Include="Helpers\BarcodeScanner.cs" />
     <Compile Include="Helpers\FileCopier.cs" />
@@ -127,12 +128,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="ShahzaibEMBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ShahzaibEMBDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Specials\SpecialMethods.cs" />
+    <Compile Include="Views\Controls\ArticleBox.xaml.cs">
+      <DependentUpon>ArticleBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Controls\CustomComboBox.xaml.cs">
       <DependentUpon>CustomComboBox.xaml</DependentUpon>
     </Compile>
@@ -169,8 +168,17 @@
     <Compile Include="Views\Controls\LedgerRelated\LedgerDetailRow.xaml.cs">
       <DependentUpon>LedgerDetailRow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Controls\PageBrowsing.xaml.cs">
+      <DependentUpon>PageBrowsing.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SpecialOnes\ImagesViewer.xaml.cs">
       <DependentUpon>ImagesViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\AddArticle.xaml.cs">
+      <DependentUpon>AddArticle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\ManageArticles.xaml.cs">
+      <DependentUpon>ManageArticles.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\ManagePicture.xaml.cs">
       <DependentUpon>ManagePicture.xaml</DependentUpon>
@@ -183,19 +191,12 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="ShahzaibEMBDataSet.xsc">
-      <DependentUpon>ShahzaibEMBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ShahzaibEMBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ShahzaibEMBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ShahzaibEMBDataSet.xss">
-      <DependentUpon>ShahzaibEMBDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\Controls\ArticleBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Controls\CustomComboBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -220,7 +221,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\Controls\PageBrowsing.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\SpecialOnes\ImagesViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\AddArticle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\ManageArticles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

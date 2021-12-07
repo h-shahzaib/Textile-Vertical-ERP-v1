@@ -17,17 +17,17 @@ using System.Windows.Shapes;
 namespace ManageNazyOrders.Controls
 {
     /// <summary>
-    /// Interaction logic for PurchaseRow.xaml
+    /// Interaction logic for ServicesRow.xaml
     /// </summary>
-    public partial class PurchaseRow : UserControl
+    public partial class ServicesRow : UserControl
     {
         readonly TotalChangedDelegate TotalChanged;
 
-        public PurchaseRow(TotalChangedDelegate totalChanged, string input = null)
+        public ServicesRow(TotalChangedDelegate totalChanged, string input = null)
         {
             InitializeComponent();
-            AssignEvents();
             this.TotalChanged = totalChanged;
+            AssignEvents();
             CompiledString = input;
         }
 
@@ -62,21 +62,21 @@ namespace ManageNazyOrders.Controls
                 return;
 
             var splits = str.Split(',');
-            ColorBx.Text = splits[0];
-            CategoryBx.Text = splits[1];
-            SubCategoryBx.Text = splits[2];
-            DescriptionBx.Text = splits[3];
-            RateBx.Text = splits[4];
+            CategoryBx.Text = splits[0];
+            SubCategoryBx.Text = splits[1];
+            DescriptionBx.Text = splits[2];
+            UnitBx.Text = splits[4];
+            RateBx.Text = splits[3];
             QtyBx.Text = splits[5];
         }
 
         private string GetString()
         {
             string output = "";
-            output += ColorBx.Text + ",";
             output += CategoryBx.Text + ",";
             output += SubCategoryBx.Text + ",";
             output += DescriptionBx.Text + ",";
+            output += UnitBx.Text + ",";
             output += RateBx.Text + ",";
             output += QtyBx.Text;
             return output;

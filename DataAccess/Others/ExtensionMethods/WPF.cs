@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Markup;
 using System.Windows.Media.Imaging;
@@ -35,6 +36,9 @@ namespace GlobalLib.Others.ExtensionMethods
 
             return null;
         }
+
+        public static void PerformClick(this Button btn) =>
+            btn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
 
         public static void MoveToNextUIElement(this KeyEventArgs e)
         {

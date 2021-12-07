@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="GlobalLib.Views.Controls.ArticleBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GlobalLib.Views.Controls"
+             mc:Ignorable="d" Background="White"
+             BorderBrush="LightGray" BorderThickness="1"
+             Margin="2.5" MinWidth="100"
+             Height="270">
+    <UserControl.Effect>
+        <DropShadowEffect Direction="310" BlurRadius="5" ShadowDepth="1" Opacity=".5"/>
+    </UserControl.Effect>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Rectangle Name="Blanket" Fill="LightCyan" Grid.RowSpan="2" Panel.ZIndex="2" Opacity=".5" Visibility="Collapsed"/>
+        <Image Name="ImageBox" Stretch="Fill"/>
+        <Border Grid.Row="1" BorderBrush="LightGray" BorderThickness="0 1 0 0" Background="#E9E9E9">
+            <TextBlock Name="ArticleNoBlk" Text="Article Number: 246" Margin="10 5" FontSize="18"
+                       FontFamily="Cascadia Mono SemiBold" Foreground="Black"/>
+        </Border>
+    </Grid>
+</UserControl>
