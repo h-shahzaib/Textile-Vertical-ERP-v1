@@ -3,11 +3,38 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ManageNazyOrders.Controls"
+             xmlns:local="clr-namespace:GlobalLib.Views.Controls;assembly=GlobalLib"
              mc:Ignorable="d" 
-             d:DesignHeight="50" d:DesignWidth="800">
+             Height="40" d:DesignWidth="800">
     <Grid>
-             
-        .
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <ComboBox Name="ColorBx" Grid.Column="0" Margin="2.5" FontSize="18" VerticalContentAlignment="Center"
+                  FontFamily="Century Gothic" IsEditable="True" Padding="3"/>
+        <ComboBox Name="CategoryBx" Grid.Column="1" Margin="2.5" FontSize="18" VerticalContentAlignment="Center"
+                  FontFamily="Century Gothic" IsEditable="True" Padding="3"/>
+        <ComboBox Name="SubCategoryBx" Grid.Column="2" Margin="2.5" FontSize="18" VerticalContentAlignment="Center"
+                  FontFamily="Century Gothic" IsEditable="True" Padding="3"/>
+        <ComboBox Name="DescriptionBx" Grid.Column="3" Margin="2.5" FontSize="18" VerticalContentAlignment="Center"
+                  FontFamily="Century Gothic" IsEditable="True" Padding="3"/>
+        <ComboBox Name="UnitBx" Grid.Column="4" Margin="2.5" FontSize="18" VerticalContentAlignment="Center"
+                  FontFamily="Century Gothic" IsEditable="True" Padding="3"/>
+        <TextBox Name="RateBx" Grid.Column="5" Margin="2.5" FontSize="18" VerticalContentAlignment="Center" 
+                 HorizontalContentAlignment="Center" FontFamily="Consolas"/>
+        <TextBox Name="QtyBx" Grid.Column="6" Margin="2.5" FontSize="18" VerticalContentAlignment="Center" 
+                 HorizontalContentAlignment="Center" FontFamily="Consolas"/>
+        <Border Grid.Column="7" Margin="2.5" BorderBrush="DarkGray" BorderThickness="1">
+            <TextBlock Name="TotalBlk" VerticalAlignment="Center" HorizontalAlignment="Center" Text="000"
+                       Foreground="Gray" FontWeight="Bold" FontFamily="Consolas" FontSize="18"/>
+        </Border>
     </Grid>
 </UserControl>

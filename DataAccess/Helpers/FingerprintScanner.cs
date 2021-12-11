@@ -1,5 +1,4 @@
-﻿using DPUruNet;
-using GlobalLib.Others.ExtensionMethods;
+﻿using GlobalLib.Others.ExtensionMethods;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -11,9 +10,9 @@ namespace GlobalLib.Helpers
 {
     public class FingerprintScanner
     {
-        public FingerprintCaptured Captured { get; set; }
+        /*public FingerprintCaptured Captured { get; set; }*/
 
-        public FingerprintScanner(FingerprintCaptured captured)
+        /*public FingerprintScanner(FingerprintCaptured captured)
         {
             this.Captured = captured;
             var _readers = ReaderCollection.GetReaders();
@@ -120,6 +119,6 @@ namespace GlobalLib.Helpers
                 ("Reader Status - " + currentReader.Status.Status).ShowError();
         }
 
-        public delegate void FingerprintCaptured(Bitmap bitmap, Fmd fingerprint);
+        public delegate void FingerprintCaptured(Bitmap bitmap, Fmd fingerprint);*/
     }
 }

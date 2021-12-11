@@ -4,10 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GlobalLib.Views.Controls;assembly=GlobalLib"
-        mc:Ignorable="d" SizeToContent="Width"
+        mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Background="WhiteSmoke" 
-        Title="New Nazy Order:" Height="650" Width="900">
+        Background="#E9E9E9" 
+        Title="New Nazy Order:" Height="850" Width="1200">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
@@ -16,16 +16,13 @@
         <Grid Margin="10" Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <GroupBox Margin="10" Background="White">
-                <Grid Margin="5">
+            <GroupBox Name="UpperSection" Margin="0 0 0 10" Background="White">
+                <Grid Margin="5 8 5 5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="auto"/>
@@ -38,9 +35,8 @@
                     </Grid.ColumnDefinitions>
 
                     <StackPanel>
-                        <TextBlock Text="BR:" VerticalAlignment="Center" FontSize="15" FontFamily="Bahnschrift"/>
-                        <local:CustomComboBox Grid.Column="1" Margin="0 2 0 0" FontSize="15" 
-                                      MinWidth="100" x:Name="BrandNameCombo"/>
+                        <TextBlock Text="Brand:" VerticalAlignment="Center" FontSize="15" FontFamily="Bahnschrift"/>
+                        <ComboBox Grid.Column="1" Margin="0 2 0 0" FontFamily="Century Gothic" FontSize="18" Padding="3" IsEditable="True" MinWidth="100" x:Name="BrandCombo"/>
                     </StackPanel>
 
                     <Grid Grid.Column="2">
@@ -48,54 +44,43 @@
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <TextBlock Grid.Row="0" Text="Last Order No:" FontSize="15" Margin="15 0 0 0" FontFamily="Bahnschrift"/>
-                        <Border Grid.Row="1" BorderBrush="DarkGray" BorderThickness="1" Margin="15 2 0 0" Padding="10 0 10 0">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="10"/>
-                                    <ColumnDefinition Width="auto"/>
-                                </Grid.ColumnDefinitions>
-
-                                <TextBlock Grid.Column="0" FontSize="15" Text="Nazy-001" VerticalAlignment="Center" x:Name="LastOrderNumberBlk"/>
-                                <CheckBox x:Name="NewOrOldCheck" Grid.Column="2" VerticalAlignment="Center" Margin="0 1 0 0"/>
-                            </Grid>
-                        </Border>
+                        <TextBlock Grid.Row="0" Text="Order No:" FontSize="15" Margin="15 0 0 0" FontFamily="Bahnschrift"/>
+                        <TextBox Name="OrderNumBx" Grid.Row="1" Margin="15 2 0 0" FontFamily="Consolas" FontSize="15" Padding="3" MinWidth="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                     </Grid>
 
                     <StackPanel Grid.Column="4">
                         <TextBlock Grid.Column="4" Text="Fabric Type:" VerticalAlignment="Center" FontSize="15" Margin="15 0 0 0" FontFamily="Bahnschrift"/>
-                        <local:CustomComboBox Grid.Column="5" Margin="15 2 0 0" FontSize="15" IsUpperCase="True"
-                                      MinWidth="100" x:Name="MainFabricCombo"/>
+                        <ComboBox Grid.Column="5" Margin="15 2 0 0" FontFamily="Century Gothic" FontSize="18" Padding="3" IsEditable="True" MinWidth="100" x:Name="FabricTypeCombo"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Column="6">
-                        <TextBlock Grid.Column="6" Text="Article No:" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="15" Margin="15 0 0 0"/>
-                        <local:CustomComboBox Grid.Column="7" Margin="15 2 0 0" FontSize="15" IsUpperCase="True"
-                                      MinWidth="100" x:Name="ArticleNoCombo"/>
-                    </StackPanel>
-
-                    <StackPanel Grid.Column="8">
+                    <StackPanel Grid.Column="5">
                         <TextBlock Grid.Column="8" Text="Article Type:" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="15" Margin="15 0 0 0"/>
-                        <local:CustomComboBox Grid.Column="9" Margin="15 2 0 0" FontSize="15" IsUpperCase="True"
-                                      MinWidth="100" x:Name="ArticleTypeCombo"/>
+                        <ComboBox Grid.Column="9" Margin="15 2 0 0" FontFamily="Century Gothic" FontSize="18" Padding="3" IsEditable="True" MinWidth="100" x:Name="ArticleTypeCombo"/>
                     </StackPanel>
 
-                    <Grid Grid.Column="10">
+                    <Grid Grid.Column="6">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <TextBlock Grid.Row="0" Text="Picture:" FontSize="15" Margin="15 0 0 0" FontFamily="Bahnschrift"/>
-                        <Button x:Name="GetMainPictureBtn" Content="MAIN PICTURE" 
-                                Grid.Row="1" FontSize="15" BorderBrush="LightGray"
-                                FontWeight="Bold" Background="WhiteSmoke" Margin="15 2 5 0" 
-                                Foreground="DarkGray" Padding="10 2 10 3"/>
+                        <TextBlock Grid.Row="0" Text="Article No:" FontSize="15" Margin="15 0 0 0" FontFamily="Bahnschrift"/>
+                        <Button x:Name="SelectArticleBtn" Content="NOT SELECTED" 
+                                Grid.Row="1" FontSize="15" BorderBrush="LightGray" FontFamily="Century Gothic"
+                                FontWeight="Bold" Background="#F2F2F2" Margin="15 2 5 0" 
+                                Foreground="DarkGray" Padding="15 3 15 2"/>
                     </Grid>
+
+                    <Button Name="EditMainDetailBtn" Grid.Column="8" Margin="10" Padding="20 5" Content="EDIT MAIN DETAIL"
+                            Foreground="DarkGray" FontWeight="Bold" FontFamily="Century Gothic"
+                            FontSize="15" Background="#F2F2F2" BorderBrush="LightGray"/>
                 </Grid>
             </GroupBox>
 
-            <GroupBox Grid.Row="1" Margin="10" Background="White" Padding="5">
+            <GroupBox Name="SwitchesSection" Grid.Row="1" Margin="0 0 0 10" Padding="5 10 5 4" Background="White">
+                <StackPanel Name="SwitchesCont"/>
+            </GroupBox>
+
+            <GroupBox Grid.Row="2" Margin="0 0 0 0" Background="White" Padding="5">
                 <Grid Margin="0 5 0 0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
@@ -108,22 +93,28 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="auto"/>
                             <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
                         </Grid.ColumnDefinitions>
 
                         <StackPanel>
                             <TextBlock Text="Article Color:" VerticalAlignment="Center" FontSize="15" FontFamily="Bahnschrift"/>
-                            <local:CustomComboBox Grid.Column="1" Margin="0 5 0 5" FontSize="15" 
-                                                  MinWidth="150" x:Name="ArticleColorCombo"/>
+                            <ComboBox Grid.Column="1" Margin="0 5 0 0" FontFamily="Century Gothic" FontSize="20" Padding="3" IsEditable="True" MinWidth="150" x:Name="ArticleColorCombo"/>
                         </StackPanel>
 
                         <StackPanel Grid.Column="1">
                             <TextBlock Text="Pieces:" VerticalAlignment="Center" FontSize="15" Margin="15 0 0 0" FontFamily="Bahnschrift"/>
-                            <TextBox Margin="15 5 0 0" FontSize="15" MinWidth="100"
-                             HorizontalContentAlignment="Center" Padding="5" x:Name="PiecesBx"/>
+                            <TextBox Margin="15 5 0 0" FontSize="15.5" MinWidth="100" HorizontalContentAlignment="Center" Padding="5" x:Name="PiecesBx"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="4" Margin="0 0 10 0" VerticalAlignment="Center">
+                            <TextBlock Text="TOTAL:" FontFamily="Bahnschrift" FontWeight="DemiBold" FontSize="15" HorizontalAlignment="Right"/>
+                            <TextBlock Name="NetTotalBlk" Text="0,000" FontFamily="Consolas" HorizontalAlignment="Right" FontWeight="ExtraBold" FontSize="22"/>
                         </StackPanel>
                     </Grid>
 
-                    <ScrollViewer Grid.Row="2" Padding="0 0 5 0">
+                    <ScrollViewer Grid.Row="2" Padding="0 0 8 0">
                         <Grid Grid.Row="2">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto"/>
@@ -143,6 +134,7 @@
                                     <Grid Margin="10 7 5 5">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="auto"/>
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="auto"/>
                                         </Grid.ColumnDefinitions>
@@ -150,13 +142,17 @@
                                             <TextBlock Text="STAGE 1:" FontFamily="Bahnschrift" FontWeight="DemiBold" FontSize="12"/>
                                             <TextBlock Text="PURCHASES" FontFamily="Bahnschrift" FontWeight="ExtraBold" FontSize="18"/>
                                         </StackPanel>
+                                        <StackPanel Grid.Column="1" Margin="20 0 0 0" VerticalAlignment="Center">
+                                            <TextBlock Text="TOTAL:" FontFamily="Bahnschrift" FontWeight="DemiBold" FontSize="12"/>
+                                            <TextBlock Name="PurchaseTotalBlk" Text="0" FontFamily="Consolas" FontWeight="ExtraBold" FontSize="18"/>
+                                        </StackPanel>
                                         <Button Name="AddPurchaseRowBtn" Grid.Column="16" Content="+" Background="WhiteSmoke" 
                                                 BorderBrush="DarkGray" FontSize="25" Foreground="DarkGray" Padding="6 -4 5 3"
                                                 FontWeight="Bold" Width="35"/>
                                     </Grid>
                                 </Border>
                                 <Border Grid.Row="1" Padding="2.5">
-                                    <StackPanel Grid.Row="1" Orientation="Vertical" x:Name="RowsContainer"/>
+                                    <StackPanel Grid.Row="1" Orientation="Vertical" x:Name="PurchaseRowsCont"/>
                                 </Border>
                             </Grid>
                             <Grid Background="#EAEAEA" Grid.Row="1" Margin="0 5 0 0">
@@ -171,33 +167,6 @@
                                     <Grid Margin="10 7 5 5">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="auto"/>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="auto"/>
-                                        </Grid.ColumnDefinitions>
-                                        <StackPanel VerticalAlignment="Center">
-                                            <TextBlock Text="STAGE 2:" FontFamily="Bahnschrift" FontWeight="DemiBold" FontSize="12"/>
-                                            <TextBlock Text="SERVICES" FontFamily="Bahnschrift" FontWeight="ExtraBold" FontSize="18"/>
-                                        </StackPanel>
-                                        <Button  Name="AddEmbroideryRowBtn" Grid.Column="16" Content="+" Background="WhiteSmoke" 
-                                                BorderBrush="DarkGray" FontSize="25" Foreground="DarkGray" Padding="6 -4 5 3"
-                                                FontWeight="Bold" Width="35"/>
-                                    </Grid>
-                                </Border>
-                                <Border Grid.Row="1" Padding="2.5">
-                                    <StackPanel Grid.Row="1" Orientation="Vertical"/>
-                                </Border>
-                            </Grid>
-                            <Grid Background="#EAEAEA" Grid.Row="1" Margin="0 5 0 0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="auto"/>
-                                </Grid.RowDefinitions>
-                                <Border Grid.Row="0" Background="#E5E5E5" BorderBrush="LightGray" BorderThickness="0 0 0 1">
-                                    <Border.Effect>
-                                        <DropShadowEffect Direction="180" BlurRadius="5" ShadowDepth="1" Opacity=".1"/>
-                                    </Border.Effect>
-                                    <Grid Margin="10 7 5 5">
-                                        <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="auto"/>
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="auto"/>
@@ -206,13 +175,17 @@
                                             <TextBlock Text="STAGE 2:" FontFamily="Bahnschrift" FontWeight="DemiBold" FontSize="12"/>
                                             <TextBlock Text="EMBROIDERY" FontFamily="Bahnschrift" FontWeight="ExtraBold" FontSize="18"/>
                                         </StackPanel>
-                                        <Button Grid.Column="16" Content="+" Background="WhiteSmoke" 
-                                            BorderBrush="DarkGray" FontSize="25" Foreground="DarkGray" Padding="6 -4 5 3"
-                                            FontWeight="Bold" Width="35"/>
+                                        <StackPanel Grid.Column="1" Margin="20 0 0 0" VerticalAlignment="Center">
+                                            <TextBlock Text="TOTAL:" FontFamily="Bahnschrift" FontWeight="DemiBold" FontSize="12"/>
+                                            <TextBlock Name="EmbTotalBlk" Text="0" FontFamily="Consolas" FontWeight="ExtraBold" FontSize="18"/>
+                                        </StackPanel>
+                                        <Button Name="AddEmbRowBtn" Grid.Column="16" Content="+" Background="WhiteSmoke" 
+                                                BorderBrush="DarkGray" FontSize="25" Foreground="DarkGray" Padding="6 -4 5 3"
+                                                FontWeight="Bold" Width="35"/>
                                     </Grid>
                                 </Border>
                                 <Border Grid.Row="1" Padding="2.5">
-                                    <StackPanel Grid.Row="1" Orientation="Vertical"/>
+                                    <StackPanel Grid.Row="1" Orientation="Vertical" Name="EmbRowsCont"/>
                                 </Border>
                             </Grid>
                             <Grid Background="#EAEAEA" Grid.Row="2" Margin="0 5 0 0">
@@ -227,6 +200,7 @@
                                     <Grid Margin="10 7 5 5">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="auto"/>
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="auto"/>
                                         </Grid.ColumnDefinitions>
@@ -234,49 +208,39 @@
                                             <TextBlock Text="STAGE 3:" FontFamily="Bahnschrift" FontWeight="DemiBold" FontSize="12"/>
                                             <TextBlock Text="SERVICES" FontFamily="Bahnschrift" FontWeight="ExtraBold" FontSize="18"/>
                                         </StackPanel>
+                                        <StackPanel Grid.Column="1" Margin="20 0 0 0" VerticalAlignment="Center">
+                                            <TextBlock Text="TOTAL:" FontFamily="Bahnschrift" FontWeight="DemiBold" FontSize="12"/>
+                                            <TextBlock Name="ServicesTotalBlk" Text="0" FontFamily="Consolas" FontWeight="ExtraBold" FontSize="18"/>
+                                        </StackPanel>
                                         <Button Name="AddServiceRowBtn" Grid.Column="16" Content="+" Background="WhiteSmoke" 
                                                 BorderBrush="DarkGray" FontSize="25" Foreground="DarkGray" Padding="6 -4 5 3"
                                                 FontWeight="Bold" Width="35"/>
                                     </Grid>
                                 </Border>
                                 <Border Grid.Row="1" Padding="2.5">
-                                    <StackPanel Grid.Row="1" Orientation="Vertical"/>
-                                </Border>
-                            </Grid>
-                            <Grid Background="#EAEAEA" Grid.Row="3" Margin="0 5 0 0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="auto"/>
-                                </Grid.RowDefinitions>
-                                <Border Grid.Row="0" Background="#E5E5E5" BorderBrush="LightGray" BorderThickness="0 0 0 1">
-                                    <Border.Effect>
-                                        <DropShadowEffect Direction="180" BlurRadius="5" ShadowDepth="1" Opacity=".1"/>
-                                    </Border.Effect>
-                                    <Grid Margin="10 7 5 5">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="auto"/>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="auto"/>
-                                        </Grid.ColumnDefinitions>
-                                        <StackPanel VerticalAlignment="Center">
-                                            <TextBlock Text="STAGE 4:" FontFamily="Bahnschrift" FontWeight="DemiBold" FontSize="12"/>
-                                            <TextBlock Text="ZARI" FontFamily="Bahnschrift" FontWeight="ExtraBold" FontSize="18"/>
-                                        </StackPanel>
-                                        <Button Name="AddZariRowBtn" Grid.Column="16" Content="+" Background="WhiteSmoke" 
-                                                BorderBrush="DarkGray" FontSize="25" Foreground="DarkGray" Padding="6 -4 5 3"
-                                                FontWeight="Bold" Width="35"/>
-                                    </Grid>
-                                </Border>
-                                <Border Grid.Row="1" Padding="2.5">
-                                    <StackPanel Grid.Row="1" Orientation="Vertical"/>
+                                    <StackPanel Grid.Row="1" Orientation="Vertical" Name="ServiceRowsCont"/>
                                 </Border>
                             </Grid>
                         </Grid>
                     </ScrollViewer>
 
-                    <Button Grid.Row="3" Content="FINISHED" FontSize="25" Padding="30 10 30 10" FontWeight="ExtraBold"
-                            Background="#E5E5E5" Foreground="Gray" Margin="0 10 0 0" BorderBrush="Gray"
-                            HorizontalAlignment="Right"/>
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Name="FinishedBtn" Grid.Column="1" Content="FINISHED" FontSize="25" Padding="30 10 30 10" FontWeight="ExtraBold"
+                                Background="#E5E5E5" Foreground="Gray" Margin="0 10 0 0" BorderBrush="Gray"
+                                HorizontalAlignment="Right"/>
+                        <Button Name="SingleEditBtn" Grid.Column="2" Content="PARTIAL EDIT" FontSize="25" Padding="30 10 30 10" FontWeight="ExtraBold"
+                                Background="#E5E5E5" Foreground="Gray" Margin="10 10 0 0" BorderBrush="Gray"
+                                HorizontalAlignment="Right"/>
+                        <Button Name="AllEditBtn" Grid.Column="3" Content="COMPLETE EDIT" FontSize="25" Padding="30 10 30 10" FontWeight="ExtraBold"
+                                Background="#E5E5E5" Foreground="Gray" Margin="10 10 0 0" BorderBrush="Gray"
+                                HorizontalAlignment="Right"/>
+                    </Grid>
                 </Grid>
             </GroupBox>
         </Grid>

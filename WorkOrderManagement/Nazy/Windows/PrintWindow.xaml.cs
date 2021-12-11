@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WorkOrderManagement.Nazy.Views;
 using Image = System.Windows.Controls.Image;
+using NazyWorkOrder = WorkOrderManagement.Nazy.Views.NazyWorkOrder;
 using Point = System.Windows.Point;
 using Size = System.Windows.Size;
 
