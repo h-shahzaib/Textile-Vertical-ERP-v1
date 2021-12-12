@@ -20,6 +20,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WorkOrderManagement.Nazy.Views;
 using WorkOrderManagement.Nazy.Windows;
+using NazyWorkOrder = WorkOrderManagement.Nazy.Views.NazyWorkOrder;
 
 namespace WorkOrderManagement
 {
