@@ -1,4 +1,5 @@
 ﻿using GlobalLib.Others.ExtensionMethods;
+using ManageNazyOrders.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -73,6 +74,7 @@ namespace ManageNazyOrders.Controls
         private string GetString()
         {
             string output = "";
+            output += MaxID.ToString() + ",";
             output += ColorBx.Text + ",";
             output += CategoryBx.Text + ",";
             output += SubCategoryBx.Text + ",";
@@ -80,6 +82,16 @@ namespace ManageNazyOrders.Controls
             output += RateBx.Text + ",";
             output += QtyBx.Text;
             return output;
+        }
+
+        private int MaxID
+        {
+            get
+            {
+                var value = AddWorkOrder.UsedIDs.Max(i => i) + 1;
+                AddWorkOrder.UsedIDs.Add(value);
+                return value;
+            }
         }
 
         public delegate void TotalChangedDelegate();

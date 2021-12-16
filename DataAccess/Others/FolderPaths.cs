@@ -17,7 +17,7 @@ namespace GlobalLib.Others
         public static string NazyORDER_MAINIMAGE_PATH = @"\\Admin\s\Stitching\FilesDatabase\NazyOrder_Color\MainImages\";
 
         // New Order Management System:
-        public static string NAZYORDER_ARTICLES_PATH = /*@"\\Admin\s\NazyApparel\FilesDatabase\Articles\"*/ @"E:\ZTEMP\";
+        public static string NAZYORDER_ARTICLES_PATH = /*@"\\Admin\s\NazyApparel\FilesDatabase\Articles\"*/ @"D:\ZTEMP\";
 
         // Admin Panel:
         public static string NazyORDER_Invoices_Path = @"\\Admin\s\Stitching\FilesDatabase\InvoiceImages\";

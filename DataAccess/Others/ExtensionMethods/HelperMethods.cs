@@ -146,6 +146,16 @@ namespace GlobalLib.Others.ExtensionMethods
             }
         }
 
+        public static BitmapImage GetUnlockedImageFromPath(string path)
+        {
+            BitmapImage bmi = new BitmapImage();
+            bmi.BeginInit();
+            bmi.UriSource = new Uri(path);
+            bmi.CacheOption = BitmapCacheOption.OnLoad;
+            bmi.EndInit();
+            return bmi;
+        }
+
         public static void ViewImage(string path)
         {
             if (!File.Exists(path))

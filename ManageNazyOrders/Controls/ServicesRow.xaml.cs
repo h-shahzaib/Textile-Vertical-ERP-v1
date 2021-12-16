@@ -1,4 +1,5 @@
 ﻿using GlobalLib.Others.ExtensionMethods;
+using ManageNazyOrders.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -62,17 +63,18 @@ namespace ManageNazyOrders.Controls
                 return;
 
             var splits = str.Split(',');
-            CategoryBx.Text = splits[0];
-            SubCategoryBx.Text = splits[1];
-            DescriptionBx.Text = splits[2];
-            UnitBx.Text = splits[4];
-            RateBx.Text = splits[3];
-            QtyBx.Text = splits[5];
+            CategoryBx.Text = splits[1];
+            SubCategoryBx.Text = splits[2];
+            DescriptionBx.Text = splits[3];
+            UnitBx.Text = splits[5];
+            RateBx.Text = splits[4];
+            QtyBx.Text = splits[6];
         }
 
         private string GetString()
         {
             string output = "";
+            output += MaxID.ToString() + ",";
             output += CategoryBx.Text + ",";
             output += SubCategoryBx.Text + ",";
             output += DescriptionBx.Text + ",";
@@ -80,6 +82,16 @@ namespace ManageNazyOrders.Controls
             output += RateBx.Text + ",";
             output += QtyBx.Text;
             return output;
+        }
+
+        private int MaxID
+        {
+            get
+            {
+                var value = AddWorkOrder.UsedIDs.Max(i => i) + 1;
+                AddWorkOrder.UsedIDs.Add(value);
+                return value;
+            }
         }
 
         public delegate void TotalChangedDelegate();

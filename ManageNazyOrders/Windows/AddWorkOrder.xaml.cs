@@ -31,6 +31,8 @@ namespace ManageNazyOrders.Windows
             Init();
         }
 
+        public static List<int> UsedIDs = new List<int>();
+
         private void Init()
         {
             SwitchesSection.Visibility = Visibility.Collapsed;
@@ -115,6 +117,13 @@ namespace ManageNazyOrders.Windows
                 manageArticles.ShowDialog();
                 if (manageArticles.AllowedToProceed)
                     SelectedArticleNumber = manageArticles.SelectedArticleNumber;
+            };
+
+            BrandCombo.TextChanged += (a, b) =>
+            {
+                var lastOrder = MainWindow.rawDataManager.NazyWorkOrders.Count > 0 ? 
+                                MainWindow.rawDataManager.NazyWorkOrders.Max(i => i.OrderNum) : 0;
+                OrderNumBx.Text = (++lastOrder).ToString("000");
             };
 
             if (ToEditOrders != null)

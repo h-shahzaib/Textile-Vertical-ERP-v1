@@ -1,4 +1,7 @@
-﻿using System;
+﻿using GlobalLib.Data.NazyModels;
+using GlobalLib.Others;
+using GlobalLib.Others.ExtensionMethods;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +23,26 @@ namespace NazyProductionManagement.Controls
     /// </summary>
     public partial class PurchaseBx : UserControl
     {
-        public PurchaseBx()
+        readonly NazyWorkOrder order;
+
+        public PurchaseBx(NazyWorkOrder order)
         {
             InitializeComponent();
+            this.order = order;
+            AssignEvents();
+            PopulateData();
+        }
+
+        private void AssignEvents()
+        {
+            
+        }
+
+        private void PopulateData()
+        {
+            OrderNumBlk.Text = $"{order.Brand}-{order.OrderNum:000}";
+            ImageBx.Source = HelperMethods.GetUnlockedImageFromPath(FolderPaths.NAZYORDER_ARTICLES_PATH + order.ArticleNumber + ".jpeg");
+
         }
     }
 }

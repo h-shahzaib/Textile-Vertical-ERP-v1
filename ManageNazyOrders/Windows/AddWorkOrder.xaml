@@ -36,7 +36,7 @@
 
                     <StackPanel>
                         <TextBlock Text="Brand:" VerticalAlignment="Center" FontSize="15" FontFamily="Bahnschrift"/>
-                        <ComboBox Grid.Column="1" Margin="0 2 0 0" FontFamily="Century Gothic" FontSize="18" Padding="3" IsEditable="True" MinWidth="100" x:Name="BrandCombo"/>
+                        <local:CustomComboBox Grid.Column="1" Margin="0 2 0 0" FontFamily="Century Gothic" FontSize="15" MinWidth="100" x:Name="BrandCombo"/>
                     </StackPanel>
 
                     <Grid Grid.Column="2">

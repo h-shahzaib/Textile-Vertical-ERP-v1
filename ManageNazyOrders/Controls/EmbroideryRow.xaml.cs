@@ -123,6 +123,7 @@ namespace ManageNazyOrders.Controls
         private string GetString()
         {
             string output = "";
+            output += MaxID.ToString() + ",";
             output += SelectedDesign.ID + ",";
             output += StitchesCombo.SelectedItem as string + ",";
             output += RepeatGzCombo.SelectedItem as string + ",";
@@ -132,6 +133,16 @@ namespace ManageNazyOrders.Controls
             output += RepeatsBx.Text + ",";
             output += GazanaBx.Text;
             return output;
+        }
+
+        private int MaxID
+        {
+            get
+            {
+                var value = AddWorkOrder.UsedIDs.Max(i => i) + 1;
+                AddWorkOrder.UsedIDs.Add(value);
+                return value;
+            }
         }
 
         public Design SelectedDesign
