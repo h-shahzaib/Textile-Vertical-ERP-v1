@@ -1,6 +1,4 @@
-﻿using GlobalLib.Others.ExtensionMethods;
-using ManageNazyOrders.Windows;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
