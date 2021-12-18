@@ -2,19 +2,11 @@
 using GlobalLib.Others.ExtensionMethods;
 using GlobalLib.Views.Windows;
 using ManageNazyOrders.Controls;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ManageNazyOrders.Windows
 {
@@ -32,7 +24,6 @@ namespace ManageNazyOrders.Windows
         }
 
         public static List<int> UsedIDs = new List<int>();
-
         private void Init()
         {
             SwitchesSection.Visibility = Visibility.Collapsed;
@@ -119,13 +110,6 @@ namespace ManageNazyOrders.Windows
                     SelectedArticleNumber = manageArticles.SelectedArticleNumber;
             };
 
-            BrandCombo.TextChanged += (a, b) =>
-            {
-                var lastOrder = MainWindow.rawDataManager.NazyWorkOrders.Count > 0 ? 
-                                MainWindow.rawDataManager.NazyWorkOrders.Max(i => i.OrderNum) : 0;
-                OrderNumBx.Text = (++lastOrder).ToString("000");
-            };
-
             if (ToEditOrders != null)
             {
                 EditMainDetailBtn.Visibility = Visibility.Visible;
@@ -159,17 +143,6 @@ namespace ManageNazyOrders.Windows
 
         private async void EditMainDetail()
         {
-            var purchases = "";
-            var embroidery = "";
-            var services = "";
-
-            foreach (var item in PurchaseRowsCont.Children.OfType<PurchaseRow>())
-                purchases += $"[{item.CompiledString}]";
-            foreach (var item in EmbRowsCont.Children.OfType<EmbroideryRow>())
-                embroidery += $"[{item.CompiledString}]";
-            foreach (var item in ServiceRowsCont.Children.OfType<ServicesRow>())
-                services += $"[{item.CompiledString}]";
-
             var toEditOnes = new Dictionary<int, NazyWorkOrder>();
             foreach (var item in ToEditOrders)
             {
@@ -184,6 +157,7 @@ namespace ManageNazyOrders.Windows
                 order.PurchasesStr = item.PurchasesStr;
                 order.EmbroideryStr = item.EmbroideryStr;
                 order.ServicesStr = item.ServicesStr;
+                order.OrderStatus = item.OrderStatus;
 
                 if (NazyWorkOrder.Validate(order))
                     toEditOnes.Add(item.ID, order);
@@ -220,6 +194,7 @@ namespace ManageNazyOrders.Windows
             order.PurchasesStr = purchases;
             order.EmbroideryStr = embroidery;
             order.ServicesStr = services;
+            order.OrderStatus = CurrentWorkOrder.OrderStatus;
 
             if (NazyWorkOrder.Validate(order))
             {
@@ -258,6 +233,7 @@ namespace ManageNazyOrders.Windows
                 order.PurchasesStr = purchases;
                 order.EmbroideryStr = embroidery;
                 order.ServicesStr = services;
+                order.OrderStatus = CurrentWorkOrder.OrderStatus;
 
                 if (NazyWorkOrder.Validate(order))
                     toEditOnes.Add(item.ID, order);
@@ -291,6 +267,7 @@ namespace ManageNazyOrders.Windows
             order.PurchasesStr = purchases;
             order.EmbroideryStr = embroidery;
             order.ServicesStr = services;
+            order.OrderStatus = false;
 
             if (NazyWorkOrder.Validate(order))
             {

@@ -61,14 +61,15 @@ namespace ManageNazyOrders.Controls
         {
             if (string.IsNullOrWhiteSpace(str))
                 return;
-
+            
             var splits = str.Split(',');
-            ColorBx.Text = splits[0];
-            CategoryBx.Text = splits[1];
-            SubCategoryBx.Text = splits[2];
-            DescriptionBx.Text = splits[3];
-            RateBx.Text = splits[4];
-            QtyBx.Text = splits[5];
+            ColorBx.Text = splits[1];
+            CategoryBx.Text = splits[2];
+            SubCategoryBx.Text = splits[3];
+            DescriptionBx.Text = splits[4];
+            UnitBx.Text = splits[5];
+            RateBx.Text = splits[6];
+            QtyBx.Text = splits[7];
         }
 
         private string GetString()
@@ -79,6 +80,7 @@ namespace ManageNazyOrders.Controls
             output += CategoryBx.Text + ",";
             output += SubCategoryBx.Text + ",";
             output += DescriptionBx.Text + ",";
+            output += UnitBx.Text + ",";
             output += RateBx.Text + ",";
             output += QtyBx.Text;
             return output;

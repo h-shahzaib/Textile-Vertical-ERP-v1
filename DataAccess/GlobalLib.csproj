@@ -114,6 +114,7 @@
     <Compile Include="Data\NazyModels\LedgerAccount.cs" />
     <Compile Include="Data\NazyModels\NazyOtherAccount.cs" />
     <Compile Include="Data\NazyModels\NazyOtherLedger.cs" />
+    <Compile Include="Data\NazyModels\NazyPurchase.cs" />
     <Compile Include="Data\NazyModels\NazyWorkOrder.cs" />
     <Compile Include="Helpers\ApiHelper.cs" />
     <Compile Include="Helpers\BarcodeScanner.cs" />

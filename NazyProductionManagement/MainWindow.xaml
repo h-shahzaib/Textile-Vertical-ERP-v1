@@ -11,8 +11,23 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <local:PageBrowsing Name="PageBrowserCtrl"/>
         <Frame Grid.Row="1" Name="FrameCtrl" NavigationUIVisibility="Hidden"/>
+        <Grid Grid.Row="2" Background="Black">
+            <Grid.Effect>
+                <DropShadowEffect Direction="90" BlurRadius="5" ShadowDepth="1"/>
+            </Grid.Effect>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Nazy Apparel" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Center"
+                       Padding="10 0 0 0" FontFamily="Bauhaus 93" FontSize="20" Margin="8"/>
+            <Button Name="StatusBtn" Grid.Column="2" Content="○" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Center"
+                    Padding="5 4 5 2" Margin="0 0 10 0" FontFamily="Bahnschrift" FontSize="15" BorderThickness="0" Background="Transparent"/>
+        </Grid>
     </Grid>
 </Window>

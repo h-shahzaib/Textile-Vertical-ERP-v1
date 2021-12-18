@@ -19,6 +19,7 @@ namespace GlobalLib.Data.NazyModels
         public string PurchasesStr { get; set; }
         public string EmbroideryStr { get; set; }
         public string ServicesStr { get; set; }
+        public bool OrderStatus { get; set; }
 
         public static bool Validate(NazyWorkOrder input)
         {

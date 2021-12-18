@@ -5,10 +5,19 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:NazyProductionManagement.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="150" d:DesignWidth="800"
       Title="PurchasePg">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5 5 5 5">
+            <TextBlock Text="MONEY NEEDED:" FontSize="15" FontWeight="Light" FontFamily="Bahnschrift"/>
+            <TextBlock Name="MoneyBlk" Text="10,798 Rs" FontSize="25" FontWeight="ExtraBold" FontFamily="Century Gothic"/>
+        </StackPanel>
+        <StackPanel Name="PurchaseBoxesCont" Grid.Row="1"/>
     </Grid>
 </Page>

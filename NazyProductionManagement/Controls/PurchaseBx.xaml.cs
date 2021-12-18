@@ -33,16 +33,36 @@ namespace NazyProductionManagement.Controls
             PopulateData();
         }
 
+        public int MoneyNeeded { get; set; }
+
         private void AssignEvents()
         {
-            
+            SubmitBtn.Click += async delegate
+            {
+                var purchases = new List<NazyPurchase>();
+                foreach (var item in RowsCont.Children.OfType<PurchaseRow>())
+                {
+                    var purchase = item.Purchase;
+                    if (purchase != null)
+                        purchases.Add(purchase);
+                }
+
+                if(!purchases.Contains(null))
+                    await MainWindow.NazyPurchaseManager.InsertData(purchases);
+            };
         }
 
         private void PopulateData()
         {
             OrderNumBlk.Text = $"{order.Brand}-{order.OrderNum:000}";
             ImageBx.Source = HelperMethods.GetUnlockedImageFromPath(FolderPaths.NAZYORDER_ARTICLES_PATH + order.ArticleNumber + ".jpeg");
-
+            var purchaseRows = new List<PurchaseRow>();
+            foreach (var item in order.PurchasesStr.SeprateBy("{}"))
+                purchaseRows.Add(new PurchaseRow(order, item));
+            MoneyNeeded = purchaseRows.Sum(i => i.MoneyNeeded);
+            MoneyBlk.Text = MoneyNeeded.ToString("#,##0") + " Rs";
+            foreach (var item in purchaseRows)
+                RowsCont.Children.Add(item);
         }
     }
 }

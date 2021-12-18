@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NazyProductionManagement.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,18 @@ namespace NazyProductionManagement.Pages
         public PurchasePg()
         {
             InitializeComponent();
+            Loaded += (a, b) => PopulateControls();
+        }
+
+        private void PopulateControls()
+        {
+            PurchaseBoxesCont.Children.Clear();
+            var purchasesBoxes = new List<PurchaseBx>();
+            foreach (var order in MainWindow.rawDataManager.NazyWorkOrders.Where(i => i.OrderStatus))
+                purchasesBoxes.Add(new PurchaseBx(order));
+            MoneyBlk.Text = purchasesBoxes.Sum(i => i.MoneyNeeded).ToString("#,##0") + " Rs";
+            foreach (var item in purchasesBoxes)
+                PurchaseBoxesCont.Children.Add(item);
         }
     }
 }
