@@ -33,7 +33,7 @@ namespace GlobalLib.Others.ExtensionMethods
             return true;
         }
 
-        public static Window ShowAsWindow(object page, Size size, bool returnWindow = false, string title = "", SizeToContent? tocontent = null, WindowState? windowState = null)
+        public static Window ShowAsWindow(object page, System.Windows.Size size, bool returnWindow = false, string title = "", SizeToContent? tocontent = null, WindowState? windowState = null)
         {
             Window window = new Window();
             window.Content = page;

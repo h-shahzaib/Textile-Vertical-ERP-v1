@@ -255,16 +255,24 @@ namespace GlobalLib.Others.ExtensionMethods
             return Rectangle.Round(gp.GetBounds());
         }
 
-        public static List<string> SeprateBy(this string str, string braces)
+        public static List<string> SeprateBy(this string str, string braces, bool return_input = false)
         {
             if (braces.Length != 2)
-                throw new Exception("'String' must be of length '2'.");
+                throw new Exception("'Braces' must be of length '2'.");
 
             List<string> output = new List<string>();
             Regex r = new Regex($@"(?<=\{braces[0]})[^{braces[1]}]*(?=\{braces[1]})");
             var matches = r.Matches(str);
-            foreach (Match m in matches)
-                output.Add(m.Value);
+            if (return_input)
+            {
+                if (matches.Count == 0)
+                    return new List<string> { str };
+                else foreach (Match m in matches)
+                        output.Add(m.Value);
+            }
+            else foreach (Match m in matches)
+                    output.Add(m.Value);
+
             return output;
         }
 

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GlobalLib.Others.ExtensionMethods;
+using ManageNazyOrders.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -59,7 +61,7 @@ namespace ManageNazyOrders.Controls
         {
             if (string.IsNullOrWhiteSpace(str))
                 return;
-            
+
             var splits = str.Split(',');
             ColorBx.Text = splits[1];
             CategoryBx.Text = splits[2];
