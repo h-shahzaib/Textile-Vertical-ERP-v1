@@ -140,7 +140,7 @@
                                         </Grid.ColumnDefinitions>
                                         <StackPanel VerticalAlignment="Center">
                                             <TextBlock Text="STAGE 1:" FontFamily="Bahnschrift" FontWeight="DemiBold" FontSize="12"/>
-                                            <TextBlock Text="PURCHASES" FontFamily="Bahnschrift" FontWeight="ExtraBold" FontSize="18"/>
+                                            <TextBlock Text="RAW MATERIAL:" FontFamily="Bahnschrift" FontWeight="ExtraBold" FontSize="18"/>
                                         </StackPanel>
                                         <StackPanel Grid.Column="1" Margin="20 0 0 0" VerticalAlignment="Center">
                                             <TextBlock Text="TOTAL:" FontFamily="Bahnschrift" FontWeight="DemiBold" FontSize="12"/>
@@ -173,7 +173,7 @@
                                         </Grid.ColumnDefinitions>
                                         <StackPanel VerticalAlignment="Center">
                                             <TextBlock Text="STAGE 2:" FontFamily="Bahnschrift" FontWeight="DemiBold" FontSize="12"/>
-                                            <TextBlock Text="EMBROIDERY" FontFamily="Bahnschrift" FontWeight="ExtraBold" FontSize="18"/>
+                                            <TextBlock Text="EMBROIDERY:" FontFamily="Bahnschrift" FontWeight="ExtraBold" FontSize="18"/>
                                         </StackPanel>
                                         <StackPanel Grid.Column="1" Margin="20 0 0 0" VerticalAlignment="Center">
                                             <TextBlock Text="TOTAL:" FontFamily="Bahnschrift" FontWeight="DemiBold" FontSize="12"/>
@@ -206,7 +206,7 @@
                                         </Grid.ColumnDefinitions>
                                         <StackPanel VerticalAlignment="Center">
                                             <TextBlock Text="STAGE 3:" FontFamily="Bahnschrift" FontWeight="DemiBold" FontSize="12"/>
-                                            <TextBlock Text="SERVICES" FontFamily="Bahnschrift" FontWeight="ExtraBold" FontSize="18"/>
+                                            <TextBlock Text="SERVICES:" FontFamily="Bahnschrift" FontWeight="ExtraBold" FontSize="18"/>
                                         </StackPanel>
                                         <StackPanel Grid.Column="1" Margin="20 0 0 0" VerticalAlignment="Center">
                                             <TextBlock Text="TOTAL:" FontFamily="Bahnschrift" FontWeight="DemiBold" FontSize="12"/>

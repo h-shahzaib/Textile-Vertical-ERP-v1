@@ -129,7 +129,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Specials\SpecialMethods.cs" />
     <Compile Include="Views\Controls\ArticleBox.xaml.cs">
       <DependentUpon>ArticleBox.xaml</DependentUpon>
     </Compile>

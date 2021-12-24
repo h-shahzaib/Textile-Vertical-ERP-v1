@@ -10,7 +10,6 @@ using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Windows;
-using GlobalLib.Specials;
 using System.Windows.Controls;
 using Brushes = System.Windows.Media.Brushes;
 
