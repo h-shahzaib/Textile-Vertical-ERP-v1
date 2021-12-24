@@ -129,11 +129,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Specials\SpecialMethods.cs" />
     <Compile Include="Views\Controls\ArticleBox.xaml.cs">
       <DependentUpon>ArticleBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Specials\SpecialMethods.cs" />
     <Compile Include="Views\Controls\CustomComboBox.xaml.cs">
       <DependentUpon>CustomComboBox.xaml</DependentUpon>
     </Compile>
@@ -195,6 +193,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\Controls\ArticleBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\Controls\CustomComboBox.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
@@ -226,6 +228,14 @@
     <Page Include="Views\SpecialOnes\ImagesViewer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\AddArticle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Windows\ManageArticles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Windows\ManagePicture.xaml">
       <Generator>MSBuild:Compile</Generator>
