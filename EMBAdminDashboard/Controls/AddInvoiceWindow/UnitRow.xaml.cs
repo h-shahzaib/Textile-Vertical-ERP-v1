@@ -3,19 +3,11 @@ using EMBAdminDashboard.Windows;
 using GlobalLib.Data.EmbModels;
 using GlobalLib.Others.ExtensionMethods;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace EMBAdminDashboard.Controls.AddInvoiceWindow
 {
@@ -160,11 +152,9 @@ namespace EMBAdminDashboard.Controls.AddInvoiceWindow
 
         private void InitControls()
         {
-            var list = MainWindow.rawDataManager.Machines
-            .Select(i => i.EmbGz)
-            .Distinct();
-            foreach (var item in list)
-                HeadCountCombo.SuggestionsList.Add(item + "Gz");
+            HeadCountCombo.SuggestionsList.Add("8.5Gz");
+            HeadCountCombo.SuggestionsList.Add("10Gz");
+            HeadCountCombo.SuggestionsList.Add("8.66Gz");
             HeadCountCombo.SelectedIndex = 0;
         }
 

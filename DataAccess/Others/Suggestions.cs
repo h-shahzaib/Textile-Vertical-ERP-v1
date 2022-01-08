@@ -61,9 +61,9 @@ namespace GlobalLib.Others
 
         public static List<string> MachineShifts { get; } = new List<string>()
         {
-            "M1-DAY", "M1-MID", "M1-NIGHT",
+            "M1-DAY", "M1-NIGHT",
             "M2-DAY", "M2-NIGHT",
-            "M3-DAY", "M3-MID", "M3-NIGHT",
+            "M3-DAY", "M3-NIGHT",
             "M4-DAY", "M4-NIGHT",
         };
 
