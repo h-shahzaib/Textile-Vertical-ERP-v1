@@ -32,9 +32,6 @@
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
                 <Button x:Name="AddExpenseBtn" Grid.Column="0" Content="ADD EXPENSE" Padding="10" FontSize="15" FontWeight="Bold" Background="Black" Foreground="White"/>
-                <Button x:Name="ViewBtn" Grid.Column="2" Content="VIEW EXPENSE" Padding="10" FontSize="15" FontWeight="Bold" Background="WhiteSmoke"/>
-                <Button x:Name="LabourLedgersBtn" Grid.Column="4" Content="LABOUR LEDGER" Padding="10" FontSize="15" FontWeight="Bold" Background="WhiteSmoke"/>
-                <Button x:Name="BrandLedgerBtn" Grid.Column="6" Content="BRAND LEDGER" Padding="10" FontSize="15" FontWeight="Bold" Background="WhiteSmoke"/>
                 <Button x:Name="SupplierLedgerBtn" Grid.Column="8" Content="SUPPLIER LEDGER" Padding="10" FontSize="15" FontWeight="Bold" Background="WhiteSmoke" Visibility="Collapsed"/>
                 <Button x:Name="OtherLedgerBtn" Grid.Column="10" Content="OTHER LEDGER" Padding="10" FontSize="15" FontWeight="Bold" Background="WhiteSmoke"/>
             </Grid>
