@@ -74,7 +74,7 @@ namespace EMBAdminDashboard.Controls.Ledger.BrandLedgerCtrls
             }
 
             if (ledger.InvGroupID != -1)
-                IndicationBlk.Text = " • Invoice";
+                IndicationBlk.Text = $" • Invoice • {ledger.InvGroupID:000}";
         }
     }
 }

@@ -80,8 +80,12 @@ namespace EMBAdminDashboard.Windows
                 }
             }
 
+            var ledgerEntry = MainWindow.rawDataManager.BrandLedgers
+                .Where(i => i.Brand == firstOne.Brand && i.InvGroupID == firstOne.GroupID)
+                .FirstOrDefault();
+
             var list = MainWindow.rawDataManager.BrandLedgers
-                .Where(i => i.Brand == firstOne.Brand && i.InvGroupID <= firstOne.GroupID);
+                .Where(i => i.Brand == firstOne.Brand && i.SerialNo <= ledgerEntry.SerialNo);
 
             PreviousRecordsCont.Children.Add(new PreviousRec_Row_Heading());
             var firstFive = list.OrderBy(i => i.SerialNo).Reverse().Take(5);
