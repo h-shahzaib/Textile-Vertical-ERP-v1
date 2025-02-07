@@ -1,0 +1,1 @@
+⚠ Note: This was my first large-scale project, and I learned a lot from it. Instead of spending time on courses, videos, or degrees, I jumped straight into building things. While it wasn’t highly polished or consumer-ready, it served my needs well.
